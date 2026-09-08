@@ -1,3 +1,5 @@
+questions.json
+
 {
   "domainOrder": [
     "Designing Data Processing Systems",
@@ -835,7 +837,7 @@
         "Google Workspace account",
         "Service account"
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "A service account represents an application or workload rather than a human user, purpose-built for machine-to-machine authentication.",
       "source": "Datacamp"
     },
@@ -925,7 +927,7 @@
         "Use Transfer Appliance Service to migrate the data to Google Storage."
       ],
       "answer": 3,
-      "explanation": "Storage Transfer Service allows you to quickly import ONLINE data into Cloud Storage. You can also set up a repeating schedule for transferring data, as well as transfer data within Cloud Storage, from one bucket to another. Transfer Appliance is an OFFLINE secure, high capacity storage server that you set up in your datacenter. You fill it with data and ship it to an ingest location where the data is uploaded to Google Cloud Storage. So, answer D is the correct one, while B is incorrect. Answer A is incorrect: gsutil tool is good for programmatic usage by developers and may be useful to copy and move megabytes/gigabytes of data. Not so practical for Terabytes of data. It\u2019s also not reliable data transfer technique as it is related to the machine\u2019s connectivity with Google Cloud. Answer C is incorrect: In order to migrate to BigQuery, you need to migrate data to Google Storage. This is a useless approach as the main challenge is migrating data from HDFS to Google Storage and BigQuery won\u2019t help solving it.",
+      "explanation": "Storage Transfer Service allows you to quickly import ONLINE data into Cloud Storage. You can also set up a repeating schedule for transferring data, as well as transfer data within Cloud Storage, from one bucket to another. Transfer Appliance is an OFFLINE secure, high capacity storage server that you set up in your datacenter. You fill it with data and ship it to an ingest location where the data is uploaded to Google Cloud Storage. So, answer D is the correct one, while B is incorrect.   Answer A is incorrect: gsutil tool is good for programmatic usage by developers and may be useful to copy and move megabytes/gigabytes of data. Not so practical for Terabytes of data. It\u2019s also not reliable data transfer technique as it is related to the machine\u2019s connectivity with Google Cloud.   Answer C is incorrect: In order to migrate to BigQuery, you need to migrate data to Google Storage. This is a useless approach as the main challenge is migrating data from HDFS to Google Storage and BigQuery won\u2019t help solving it. References: Google Cloud Storage Transfer Service:[ https://cloud.google.com/storage-transfer/docs/ ](https://cloud.google.com/storage-transfer/docs/)Google Appliance Transfer Service:[ https://cloud.google.com/transfer-appliance/ ](https://cloud.google.com/transfer-appliance/)Migrate HDFS to Google Storage:[ https://cloud.google.com/solutions/migration/hadoop/hadoop-gcp- migration-data](https://cloud.google.com/solutions/migration/hadoop/hadoop-gcp-migration-data)",
       "source": "Whizlabs"
     },
     {
@@ -940,7 +942,7 @@
         "Cloud Scheduler"
       ],
       "answer": 3,
-      "explanation": "The question is asking to suggest a name of service that can be used to trigger to schedule a dataflow pipeline. A: Cloud Functions Cloud Functions can be written in Node.js, Python, Go, Java, .NET, Ruby, and PHP programming languages, and are executed in language-specific runtimes. This can be invoked HTTP functions from standard HTTP requests. These HTTP requests wait for the response and support handling of common HTTP request methods like GET, PUT, POST, DELETE and OPTIONS Hence this is not a correct solution. B: Compute Engine This is a VM and hence not a service to schedule a dataflow pipeline. Hence this is not a correct solution. C: Kubernetes Engine This is work on model of Master and node and hence not correct solution. D: Cloud Scheduler Cloud Scheduler is a fully managed enterprise-grade cron job scheduler. It allows you to schedule virtually any job, including batch, big data jobs, cloud infrastructure operations, and more. You can automate everything, including retries in case of failure to reduce manual toil and intervention Hence this is a correct solution",
+      "explanation": "The question is asking to suggest a name of service that can be used to trigger to schedule a dataflow pipeline. A: Cloud Functions Cloud Functions can be written in Node.js, Python, Go, Java, .NET, Ruby, and PHP programming languages, and are executed in language-specific runtimes. This can be invoked HTTP functions from standard HTTP requests. These HTTP requests wait for the response and support handling of common HTTP request methods like GET, PUT, POST, DELETE and OPTIONS Hence this is not a correct solution.   B: Compute Engine This is a VM and hence not a service to schedule a dataflow pipeline. Hence this is not a correct solution.   C: Kubernetes Engine This is work on model of Master and node and hence not correct solution.   D: Cloud Scheduler Cloud Scheduler is a fully managed enterprise-grade cron job scheduler. It allows you to schedule virtually any job, including batch, big data jobs, cloud infrastructure operations, and more. You can automate everything, including retries in case of failure to reduce manual toil and intervention Hence this is a correct solution",
       "source": "Whizlabs"
     },
     {
@@ -955,7 +957,7 @@
         "Use online prediction when using the model to return the results as soon as possible."
       ],
       "answer": 1,
-      "explanation": "AI Platform provides two ways to get predictions from trained models: online prediction (sometimes called HTTP prediction), and batch prediction. In both cases, you pass input data to a cloud-hosted machine-learning model and get inferences for each data instance. The differences are shown in the following table: Batch prediction can handle high volume of instances in a job to run complex models. It also writes the output to Google Storage by specified location. Answer A & D are incorrect: Online prediction doesn\u2019t support handling high volume of instances per job and doesn\u2019t write output to Google Storage. Answer C is incorrect: Batch prediction doesn\u2019t return the output as soon as possible, it supports asynchronous requests.",
+      "explanation": "AI Platform provides two ways to get predictions from trained models: online prediction (sometimes called HTTP prediction), and batch prediction. In both cases, you pass input data to a cloud-hosted machine-learning model and get inferences for each data instance. The differences are shown in the following table: Batch prediction can handle high volume of instances in a job to run complex models. It also writes the output to Google Storage by specified location. Answer A & D are incorrect: Online prediction doesn\u2019t support handling high volume of instances per job and doesn\u2019t write output to Google Storage.   Answer C is incorrect: Batch prediction doesn\u2019t return the output as soon as possible, it supports asynchronous requests.",
       "source": "Whizlabs"
     },
     {
@@ -985,7 +987,7 @@
         "Dataproc"
       ],
       "answer": 1,
-      "explanation": "Storage Transfer Service allows you to quickly import ONLINE data into Cloud Storage. You can also set up a repeating schedule for transferring data, as well as to transfer data within Cloud Storage, from one bucket to another. Transfer Appliance is an OFFLINE, secure, high capacity storage server that you set up in your data center. You fill it with data and ship it to an ingest location where the data is uploaded to Google Cloud Storage. So, option B is correct, while option C is incorrect. Option A is incorrect: The gsutil tool is good for programmatic usage by developers and may be useful to copy and move megabytes/gigabytes of data. It\u2019s not so practical for Terabytes of data. It\u2019s also not a reliable data transfer technique as it is related to the machine\u2019s connectivity with Google Cloud. Option D is incorrect: Dataproc may help by reading from source buckets and writes into the destination buckets, but this requires data in source buckets to be used by Hadoop/Apache tools (Partitioned, optimized file formats such as ORC, ..).",
+      "explanation": "Storage Transfer Service allows you to quickly import ONLINE data into Cloud Storage. You can also set up a repeating schedule for transferring data, as well as to transfer data within Cloud Storage, from one bucket to another. Transfer Appliance is an OFFLINE, secure, high capacity storage server that you set up in your data center. You fill it with data and ship it to an ingest location where the data is uploaded to Google Cloud Storage. So, option B is correct, while option C is incorrect. Option A is incorrect: The gsutil tool is good for programmatic usage by developers and may be useful to copy and move megabytes/gigabytes of data. It\u2019s not so practical for Terabytes of data. It\u2019s also not a reliable data transfer technique as it is related to the machine\u2019s connectivity with Google Cloud.   Option D is incorrect: Dataproc may help by reading from source buckets and writes into the destination buckets, but this requires data in source buckets to be used by Hadoop/Apache tools (Partitioned, optimized file formats such as ORC, ..). References: Google Cloud Storage Transfer Service: \\u003chttps://cloud.google.com/storage-transfer/docs/\\u003e, Google Appliance Transfer Service: \\u003chttps://cloud.google.com/transfer-appliance/\\u003e",
       "source": "Whizlabs"
     },
     {
@@ -1007,6 +1009,22 @@
       "id": "q67",
       "domain": "Designing Data Processing Systems",
       "type": "single",
+      "question": "A regional auto dealership is migrating its business applications to Google Cloud. The CTO of this company asked their data engineer to find the possible ways you can ingest data into BigQuery?",
+      "choices": [
+        "Batch Ingestion & Streaming Ingestion",
+        "Data Transfer Service",
+        "Query Materialization",
+        "Partner Integrations",
+        "All of the above"
+      ],
+      "answer": 4,
+      "explanation": "Option E is CORRECT because these all are the possible ways to load data into BigQuery. Lets understand these one by one \u2013   Batch Ingestion \u2013 This involves ingesting large, bounded datasets that don\u2019t have to be processed in real-time.   To implement batch ingestion, one can use Google Cloud Storage, Cloud Dataflow, Cloud Dataproc, Cloud Data Fusion etc. Stream Ingestion  \u2013 This involves ingesting large, unbounded data that is processed in real-time.   To implement Stream Ingestion, one can use Apache Kafka to BQ connector, Cloud Pub/Sub, Cloud Dataflow, Cloud Dataproc etc. Data Transfer Service (DTS) \u2013 This is a fully managed service to load data from external cloud storage providers such as Amazon S3, Google SaaS applications such as Google Ads, and transferring data from data warehouse technologies such as Teradata etc. Partner Integrations \u2013 These are the data integration alternatives from Google Cloud Partners. This includes, Confluent, Informatica, snapLogic, Talend and many more. Query Materialization \u2013 This is the best way to simplify extract, transform and load patterns in BigQuery. Using federated queries in BigQuery, one can persist their analysis results in Big Query to derive any insights.   Please find the image attached below having details about all the possible ways to ingest data into BigQuery.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q68",
+      "domain": "Designing Data Processing Systems",
+      "type": "single",
       "question": "Your organization is looking for a fully managed, cloud-native data integration service. Their engineers are very familiar with CDAP (Cask Data Application Platform).",
       "choices": [
         "Cloud Dataproc",
@@ -1015,11 +1033,11 @@
         "Cloud Data Fusion"
       ],
       "answer": 3,
-      "explanation": "Option D is CORRECT because Cloud Data Fusion is built with an open-source core (CDAP) for pipeline portability. This also provides end-to-end data lineage for root cause analysis. Option A is incorrect because Cloud Dataproc is a fully managed and highly scalable service for running Apache Flink, Apache Spark, and other applications. Option B is incorrect because Cloud Composer is a fully managed data-workflow orchestration service. Option C is incorrect because Cloud Dataflow is a fully managed streaming analytics service.",
+      "explanation": "Option D  is CORRECT because Cloud Data Fusion is built with an open-source core (CDAP) for pipeline portability.   This also provides end-to-end data lineage for root cause analysis.   Option A is incorrect because Cloud Dataproc is a fully managed and highly scalable service for running Apache Flink, Apache Spark, and other applications.   Option B is incorrect because Cloud Composer is a fully managed data-workflow orchestration service.   Option C is incorrect because Cloud Dataflow is a fully managed streaming analytics service.",
       "source": "Whizlabs"
     },
     {
-      "id": "q68",
+      "id": "q69",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Which of the following best describes the primary purpose of CI/CD in the context of data pipelines?",
@@ -1034,7 +1052,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q69",
+      "id": "q70",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Which of the following best describes the primary purpose of Datastream in Google Cloud?",
@@ -1049,7 +1067,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q70",
+      "id": "q71",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Which statement best describes the primary difference between batch and streaming data processing in terms of data handling and timing?",
@@ -1064,7 +1082,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q71",
+      "id": "q72",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "What is the primary purpose of data validation in data processing systems?",
@@ -1079,7 +1097,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q72",
+      "id": "q73",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Cymbal Retail has a team of business analysts who need to fix and enhance a set of large input data files. For example, duplicates need to be removed, erroneous rows should be deleted, and missing data should be added. These steps need to be performed on all the present set of files and any files received in the future in a repeatable, automated process. The business analysts are not adept at programming. What should they do?",
@@ -1094,7 +1112,7 @@
       "source": "PDE Question Bank (PDF) (Module 1)"
     },
     {
-      "id": "q73",
+      "id": "q74",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Your data engineering team receives data in JSON format from external sources at the end of each day. You need to design the data pipeline. What should you do?",
@@ -1109,7 +1127,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q74",
+      "id": "q75",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "The first stage of your data pipeline processes tens of terabytes of financial data and creates a sparse, time-series dataset as a key-value pair. Which of these is a suitable sink for the pipeline's first stage?",
@@ -1124,7 +1142,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q75",
+      "id": "q76",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are processing large amounts of input data in BigQuery. You need to combine this data with a small amount of frequently changing data that is available in Cloud SQL. What should you do?",
@@ -1139,7 +1157,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q76",
+      "id": "q77",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Your company has multiple data analysts but a limited data engineering team. You need to choose a tool where the analysts can build data pipelines themselves with a graphical user interface. Which of these products is the most appropriate?",
@@ -1154,7 +1172,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q77",
+      "id": "q78",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You manage a PySpark batch data pipeline by using Dataproc: You want to take a hands-off approach to running the workload, and you do not want to provision and manage your own cluster. What should you do?",
@@ -1169,7 +1187,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q78",
+      "id": "q79",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need to run batch jobs, which could take many days to complete. You do not want to manage the infrastructure provisioning. What should you do?",
@@ -1184,7 +1202,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q79",
+      "id": "q80",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You want to build a streaming data analytics pipeline in Google Cloud. You need to choose the right products that support streaming data. Which of these would you choose?",
@@ -1199,7 +1217,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q80",
+      "id": "q81",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You have a data pipeline that requires you to monitor a Cloud Storage bucket for a file, start a Dataflow job to process data in the file, run a shell script to validate the processed data in BigQuery, and then delete the original file. You need to orchestrate this pipeline by using recommended tools. Which product should you choose?",
@@ -1214,7 +1232,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q81",
+      "id": "q82",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are running Dataflow jobs for data processing. When developers update the code in Cloud Source Repositories, you need to test and deploy the updated code with minimal effort. Which of these would you use to build your continuous integration and delivery (CI/CD) pipeline for data processing?",
@@ -1229,7 +1247,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q82",
+      "id": "q83",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "A company wants to improve productivity and decides to programmatically schedule and monitor workflows. What tool can you use to automate your workflows?",
@@ -1244,7 +1262,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q83",
+      "id": "q84",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are ingesting data that is spread out over a wide range of dates into BigQuery at a fast rate. You need to partition the table to make queries performant. What should you do?",
@@ -1259,7 +1277,7 @@
       "source": "PDE Question Bank (PDF) (Module 3)"
     },
     {
-      "id": "q84",
+      "id": "q85",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Cymbal Retail collects large amounts of data that is useful for improving business operations. The company wants to store and analyze this data in a serverless and cost-effective manner using Google Cloud. The analysts need to use SQL to write the queries. What tool can you use to meet these requirements?",
@@ -1274,7 +1292,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q85",
+      "id": "q86",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Cymbal Retail also collects large amounts of structured, semistructured, and unstructured data. The company wants a centralized repository to store this data in a cost-effective manner using Google Cloud. What tool can you use to meet these requirements?",
@@ -1289,7 +1307,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q86",
+      "id": "q87",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need to design a Dataproc cluster to run multiple small jobs. Many jobs (but not all) are of high priority. What should you do?",
@@ -1304,7 +1322,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q87",
+      "id": "q88",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need to create repeatable data processing tasks by using Cloud Composer. You need to follow best practices and recommended approaches. What should you do?",
@@ -1319,7 +1337,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q88",
+      "id": "q89",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "When running Dataflow jobs, you see this error in the logs: \"A hot key HOT_KEY_NAME was detected in\u2026\". You need to resolve this issue and make the workload performant. What should you do?",
@@ -1334,7 +1352,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q89",
+      "id": "q90",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "A colleague at Cymbal Retail asks you about the configuration of Dataproc autoscaling for a project. What would be the Google-recommended situation when you should enable autoscaling?",
@@ -1349,7 +1367,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q90",
+      "id": "q91",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Cymbal Retail processes streaming data on Dataflow with Pub/Sub as a source. You need to plan for disaster recovery and protect against zonal failures. What should you do?",
@@ -1364,7 +1382,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q91",
+      "id": "q92",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are running a Dataflow pipeline in production. The input data for this pipeline is occasionally inconsistent. Separately from processing the valid data, you want to efficiently capture the erroneous input data for analysis. What should you do?",
@@ -1379,7 +1397,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q92",
+      "id": "q93",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "At AuroraRetail Co., you ingest several terabytes of event data from Google Analytics 4 into BigQuery each day. Customer attributes such as preferences and loyalty tiers are stored in two transactional systems. One is a Cloud SQL for MySQL instance and the other is a Cloud SQL for PostgreSQL instance that backs your CRM. The growth team wants to combine behavioral events with customer records to target customers active in the last year. They plan to run these campaigns about 120 times on a regular day and up to 360 times during major promotions. You must support frequent queries without placing heavy read load on the Cloud SQL systems. What should you do?",
@@ -1394,7 +1412,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q93",
+      "id": "q94",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need event-driven orchestration where each new file in Cloud Storage triggers a Dataproc normalization followed by BigQuery transformations for about 350 tables, and the transformations can run for up to four hours. Which approach will minimize maintenance?",
@@ -1408,7 +1426,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q94",
+      "id": "q95",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "At Aurora Press you keep analytical files in both Google Cloud Storage and in Amazon S3, and everything is stored in North America. Analysts need to run up to date queries in BigQuery regardless of which cloud holds the data, and they must not receive direct permissions on either set of buckets. What should you implement to let them query the data through BigQuery while avoiding direct bucket access?",
@@ -1424,7 +1442,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q95",
+      "id": "q96",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "In a streaming pipeline that ingests from Pub/Sub, processes with Dataflow, and writes to BigQuery, about 4% of events are malformed. How should you modify the Dataflow pipeline so that only valid records are written to BigQuery?",
@@ -1439,7 +1457,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q96",
+      "id": "q97",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "After spending four days loading CSV files into a BigQuery table named WEB\\\\_EVENT\\\\_LOGS for Clearwater Goods, you realize the column evt\\\\_epoch stores event timestamps as strings that represent UNIX epoch times because you initially set every field to STRING for speed. You need to calculate session durations from these events and you want evt\\\\_epoch available as a TIMESTAMP so that future filters and joins are efficient. You want to make the smallest possible change while keeping future queries fast. What should you do?",
@@ -1454,7 +1472,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q97",
+      "id": "q98",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "HarborLight Retail needs to run both scheduled batch loads and real time event streams in Google Cloud Dataflow, and leaders expect predictable execution with correct aggregates even when some records show up late or arrive out of order. How should you design the pipeline so that results remain accurate in the presence of late and out of order events?",
@@ -1469,7 +1487,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q98",
+      "id": "q99",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "For a Pub/Sub push subscription, how should you configure retry behavior and dead lettering so messages survive short outages, retry with gradual delays, and are routed to a different topic after 10 delivery attempts?",
@@ -1483,7 +1501,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q99",
+      "id": "q100",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "A pharmaceutical factory has over 100,000 different sensors generating JSON-format events every 10 seconds to be collected. You need to gather the event data for sensor & time series analysis.",
@@ -1494,11 +1512,11 @@
         "Datastore"
       ],
       "answer": 2,
-      "explanation": "Cloud Big Table is a petabyte-scale, fully managed NoSQL database service for large analytical and operational workloads. Answer A is incorrect: Storing data to Google Storage needs further processing to be eligible for time- series analysis using tools such as Apache Hive or Presto. Answer B is incorrect: Cloud Spanner is a relational database service. It is not recommended for JSON- format data that may have changing structure. Answer D is incorrect: Datastore can be a potential choice since it\u2019s a NoSQL database. The issue is, Datastore is not built for storing and reading huge data volumes as in this scenario. Datastore is deisgned for web applications of small scale.",
+      "explanation": "Cloud Big Table is a petabyte-scale, fully managed NoSQL database service for large analytical and operational workloads. Answer A is incorrect: Storing data to Google Storage needs further processing to be eligible for time- series analysis using tools such as Apache Hive or Presto.   Answer B is incorrect: Cloud Spanner is a relational database service. It is not recommended for JSON- format data that may have changing structure.   Answer D is incorrect: Datastore can be a potential choice since it\u2019s a NoSQL database. The issue is, Datastore is not built for storing and reading huge data volumes as in this scenario. Datastore is deisgned for web applications of small scale.",
       "source": "Whizlabs"
     },
     {
-      "id": "q100",
+      "id": "q101",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "An air-quality research facility monitors the quality of the air and alerts of possible high air pollution in a region. The facility receives event data from 25,000 sensors every 60 seconds. Event data is then used for time-series analysis per region. Cloud experts suggested using BigTable for storing event data.",
@@ -1513,7 +1531,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q101",
+      "id": "q102",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Your company hosts a gaming app which reaches over 30,000 players in a single minute. The app generates event data including information about players state, score, location coordinates and other stats. You need to find a storage solution which can support high read/write throughput with very low latency which doesn\u2019t exceed 10 milliseconds to ensure a quality performance experience for the players.",
@@ -1524,11 +1542,11 @@
         "Datastore"
       ],
       "answer": 2,
-      "explanation": "Cloud BigTable is a petabyte-scale, fully managed NoSQL database service for large analytical and operational workloads. Under a typical workload, Cloud BigTable delivers highly predictable performance. When everything is running smoothly, a typical workload can achieve the following performance for each node in the Cloud Bigtable cluster, depending on which type of storage the cluster uses: In general, a cluster\u2019s performance increases linearly as you add nodes to the cluster. For example, if you create an SSD cluster with 10 nodes, the cluster can support up to 100,000 rows per second for a typical read-only or write-only workload, with 6 ms latency for each read or write operation. Answer A is incorrect: Cloud Spanner does not guarantee the same performance and low latency as BigTable. Answer B is incorrect: While BigQuery is a potential choice, BigQuery doesn\u2019t provide high throughput and low latency as powerful as BigTable. Answer D is incorrect: Datastore can be a potential choice since it\u2019s a NoSQL database. The issue is, Datastore is not built for storing and reading huge data volumes as in this scenario. Datastore is designed for web applications of small scale.",
+      "explanation": "Cloud BigTable is a petabyte-scale, fully managed NoSQL database service for large analytical and operational workloads. Under a typical workload, Cloud BigTable delivers highly predictable performance. When everything is running smoothly, a typical workload can achieve the following performance for each node in the Cloud Bigtable cluster, depending on which type of storage the cluster uses: In general, a cluster\u2019s performance increases linearly as you add nodes to the cluster. For example, if you create an SSD cluster with 10 nodes, the cluster can support up to 100,000 rows per second for a typical read-only or write-only workload, with 6 ms latency for each read or write operation. Answer A is incorrect: Cloud Spanner does not guarantee the same performance and low latency as BigTable.   Answer B is incorrect: While BigQuery is a potential choice, BigQuery doesn\u2019t provide high throughput and low latency as powerful as BigTable.   Answer D is incorrect: Datastore can be a potential choice since it\u2019s a NoSQL database. The issue is, Datastore is not built for storing and reading huge data volumes as in this scenario. Datastore is designed for web applications of small scale.",
       "source": "Whizlabs"
     },
     {
-      "id": "q102",
+      "id": "q103",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You receive payment transaction logs from e-wallet apps. Transaction logs have a dynamic structure which differs from the e-wallet apps received from. Logs are required to be stored for further security analysis. Transaction logs are critical and it is expected from data storage to have high performance in order to query the required security metrics to be updated in near-real time. Which of the following approaches should you use?",
@@ -1539,11 +1557,71 @@
         "Use Firebase as a database to store system logs."
       ],
       "answer": 1,
-      "explanation": "When you create a Cloud Bigtable instance, you choose whether its clusters store data on solid-state drives (SSD) or hard disk drives (HDD): SSD is significantly faster and has more predictable performance than HDD. HDD throughput is much more limited than SSD throughput. In a cluster that uses HDD storage, it\u2019s easy to reach the maximum throughput before CPU usage reaches 100%. To increase throughput, you must add more nodes, but the cost of the additional nodes can easily exceed your savings from using HDD storage. SSD storage does not have this limitation because it offers much more throughput per node. Individual row reads on HDD are very slow. Because of disk seek time, HDD storage supports only 5% of the read rows per second of SSD storage. The cost savings from HDD are minimal, relative to the cost of the nodes in your Cloud Bigtable cluster, unless you\u2019re storing very large amounts of data.",
+      "explanation": "When you create a Cloud Bigtable instance, you choose whether its clusters store data on solid-state drives (SSD) or hard disk drives (HDD): SSD is significantly faster and has more predictable performance than HDD. HDD throughput is much more limited than SSD throughput. In a cluster that uses HDD storage, it\u2019s easy to reach the maximum throughput before CPU usage reaches 100%. To increase throughput, you must add more nodes, but the cost of the additional nodes can easily exceed your savings from using HDD storage. SSD storage does not have this limitation because it offers much more throughput per node. Individual row reads on HDD are very slow. Because of disk seek time, HDD storage supports only 5% of the read rows per second of SSD storage. The cost savings from HDD are minimal, relative to the cost of the nodes in your Cloud Bigtable cluster, unless you\u2019re storing very large amounts of data. References: Choosing Between SSD and HDD Storage: \\u003chttps://cloud.google.com/bigtable/docs/choosing-ssd-hdd\\u003e, Querying Cloud Bigtable Data: \\u003chttps://cloud.google.com/bigquery/external-data-bigtable\\u003e",
       "source": "Whizlabs"
     },
     {
-      "id": "q103",
+      "id": "q104",
+      "domain": "Building and Operationalizing Data Pipelines",
+      "type": "single",
+      "question": "A prominent e-commerce platform is revamping its data visualization dashboard to display real-time sales analytics. The dashboard is expected to handle a substantial number of concurrent users and deliver quick visualizations with minimal latency. Which approach should they take to optimize the dashboard\u2019s performance?\n\n1.  A) Employ BigQuery BI Engine with precomputed materialized views.\n2.  B) Implement BigQuery BI Engine with virtualized logical views.\n3.  C) Utilize BigQuery BI Engine with real-time streaming data integration.\n4.  D) Integrate BigQuery BI Engine with access-controlled authorized views.",
+      "choices": [
+        "Employ BigQuery BI Engine with precomputed materialized views.",
+        "Implement BigQuery BI Engine with virtualized logical views.",
+        "Utilize BigQuery BI Engine with real-time streaming data integration.",
+        "Integrate BigQuery BI Engine with access-controlled authorized views."
+      ],
+      "answer": 0,
+      "explanation": "Option A is CORRECT because leveraging BigQuery BI Engine with precomputed materialized views allows for quick access to aggregated data, resulting in faster visualization rendering and minimal latency, which aligns with the requirements of the e-commerce platform\u2019s data visualization dashboard. Option B is incorrect because virtualized logical views may introduce additional processing overhead and latency, which could impact the performance of the dashboard, especially under high concurrent user loads. Option C is incorrect because while real-time streaming data integration can provide up-to-date insights, it may not offer the same level of performance optimization as precomputed materialized views for handling large volumes of concurrent user requests. Option D is incorrect because access-controlled authorized views focus on security rather than performance optimization for data visualization dashboards. References: \\u003chttps://cloud.google.com/bigquery/docs/materialized-views-intro\\u003e",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q105",
+      "domain": "Building and Operationalizing Data Pipelines",
+      "type": "single",
+      "question": "Your organization utilizes a dataset in BigQuery for extensive analysis. Now, you intend to grant access to the same dataset for third-party companies while keeping data sharing costs low and ensuring data currency. Which solution should you choose?",
+      "choices": [
+        "Utilize Analytics Hub to manage data access and provide third-party companies with access to the dataset.",
+        "Implement Cloud Scheduler to regularly export the data to Cloud Storage and grant third-party companies access to the bucket.",
+        "Create a separate dataset in BigQuery containing the relevant data for sharing and grant access to third-party companies for the new dataset.",
+        "Develop a Dataflow job to periodically read the data and write it to the appropriate BigQuery dataset or Cloud Storage bucket for third-party usage."
+      ],
+      "answer": 0,
+      "explanation": "Option A is CORRECT because leveraging Analytics Hub allows centralized management of data access, ensuring security and control while providing third-party companies with access to the dataset. This solution helps maintain low data-sharing costs and ensures data currency. Option B is incorrect because while using Cloud Scheduler for data export may provide regular updates, it may not offer the same level of control and access management as Analytics Hub for third-party companies. Option C is incorrect because creating a separate dataset could lead to redundancy and increased management overhead. It may also not provide the necessary control and access management features offered by Analytics Hub. Option D is incorrect because although Dataflow can automate data movement, it may not be the most efficient solution for managing data access and ensuring currency for third-party companies. References: \\u003chttps://cloud.google.com/analytics-hub\\u003e",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q106",
+      "domain": "Building and Operationalizing Data Pipelines",
+      "type": "single",
+      "question": "Your team is developing an application on Google Cloud aimed at automatically generating subject labels for users\u2019 blog posts. Due to competitive pressure and limited developer resources, you need to implement this feature quickly, with no prior experience in machine learning. What approach should you take?",
+      "choices": [
+        "Integrate the Cloud Natural Language API into your application and process the generated Entity Analysis results as labels.",
+        "Utilize the Cloud Natural Language API within your application and process the generated Sentiment Analysis as labels.",
+        "Develop and train a text classification model using TensorFlow, deploy it using Cloud Machine Learning Engine, and call the model from your application to process the results as labels.",
+        "Create and train a text classification model using TensorFlow, deploy it using a Kubernetes Engine cluster, and call the model from your application to process the results as labels."
+      ],
+      "answer": 0,
+      "explanation": "Option A is CORRECT because leveraging the Cloud Natural Language API allows for quick implementation of subject labels without the need for machine learning expertise. By processing the generated Entity Analysis results, the application can efficiently generate subject labels for blog posts. Option B is incorrect because while Sentiment Analysis could provide insights into the sentiment of blog posts, it may not be suitable for generating subject labels. Option C is incorrect because building and deploying a custom text classification model using TensorFlow and Cloud Machine Learning Engine would require significant time and expertise, which contradicts the requirement for a quick implementation. Option D is incorrect because deploying a TensorFlow model using a Kubernetes Engine cluster would also require considerable effort and resources, making it unsuitable for the scenario described. References: \\u003chttps://cloud.google.com/natural-language\\u003e",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q107",
+      "domain": "Building and Operationalizing Data Pipelines",
+      "type": "single",
+      "question": "Your company has onboarded a new data scientist who needs to conduct complex analyses across extensive datasets stored in Google Cloud Storage and a Cassandra cluster on Google Compute Engine. The data scientist aims to create labeled datasets for machine learning projects and perform visualization tasks. However, she finds her current laptop insufficient for these tasks, causing significant slowdowns. What solution should you provide to facilitate her work?",
+      "choices": [
+        "Install a local instance of Jupyter Notebook on the data scientist\u2019s laptop.",
+        "Grant the data scientist access to Google Cloud Shell for performing analyses and visualization tasks.",
+        "Deploy a visualization tool on a virtual machine (VM) hosted on Google Compute Engine for the data scientist\u2019s use.",
+        "Deploy Google Cloud Datalab to a virtual machine (VM) on Google Compute Engine to enable the data scientist to perform analyses and visualizations efficiently."
+      ],
+      "answer": 3,
+      "explanation": "Deploying Google Cloud Datalab to a VM on Google Compute Engine gives the data scientist a scalable, cloud-hosted environment purpose-built for interactive analysis and visualization, removing the local laptop as a bottleneck. A local Jupyter instance keeps the same hardware limitation. Cloud Shell is meant for lightweight administrative tasks, not sustained heavy analysis. A generic visualization tool on a VM lacks Datalab's integrated notebook and analysis tooling.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q108",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "Which of the following best describes the primary purpose of Workflows in Google Cloud?",
@@ -1558,7 +1636,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q104",
+      "id": "q109",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "What is the primary function of Google Cloud Dataprep in the data processing pipeline?",
@@ -1573,7 +1651,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q105",
+      "id": "q110",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "You built machine learning (ML) models based on your own data. In production, the ML models are not giving satisfactory results. When you examine the data, it appears that the existing data is not sufficiently representing the business goals. You need to create a more accurate machine learning model. What should you do?",
@@ -1588,7 +1666,7 @@
       "source": "PDE Question Bank (PDF) (Module 4)"
     },
     {
-      "id": "q106",
+      "id": "q111",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "Cymbal Retail has a team of ML engineers that builds and maintains machine learning models. As a Professional Data Engineer, how will you support this team?",
@@ -1603,7 +1681,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q107",
+      "id": "q112",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "At Meridian Metrics you plan to train a BigQuery ML linear regression model that estimates the likelihood that a site visitor will buy an item. Your source table includes a string field for the customer\u2019s city which is known to be highly predictive. You want to keep preprocessing inside BigQuery with very little custom code while retaining the full signal from this categorical feature. What should you do?",
@@ -1618,7 +1696,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q108",
+      "id": "q113",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "A financial services firm providing products such as credit cards and bank loans receives thousands of online applications from clients applying for their products. Because it takes a lot of effort to scan and check all applications if they meet the minimum requirements for the products they are applying for, they want to build a machine learning model takes application fields like annual income, marital status, date of birth, occupation and other attributes as input and finds out if the applicant is qualified for the product the client applies for.",
@@ -1633,7 +1711,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q109",
+      "id": "q114",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "Data scientists are testing a TensorFlow model on Google Cloud using four NVIDIA Tesla P100 GPUs to test a TensorFlow model. After experimenting with several use cases, they decide to scale up by using a different machine type for testing. As a data engineer, you are responsible of assisting with choosing the right machine type to reach a better model performance. What should you do?",
@@ -1644,11 +1722,11 @@
         "Increase number of Tesla P100 GPUs used until test results return satisfactory performance."
       ],
       "answer": 0,
-      "explanation": "Google built the Tensor Processing Unit (TPU) in order to make it possible for data scientists to achieve business and research breakthroughs ranging from network security to medical diagnoses. Cloud TPU is the custom-designed machine learning ASIC that powers Google products like Translate, Photos, Search, Assistant, and Gmail. As for cost, below is a benchmark for cost comparison between TPU & GPU types: So, for this scenario, using TPU machine type is the recommended type to build Tensorflow models on.",
+      "explanation": "Google built the Tensor Processing Unit (TPU) in order to make it possible for data scientists to achieve business and research breakthroughs ranging from network security to medical diagnoses. Cloud TPU is the custom-designed machine learning ASIC that powers Google products like Translate, Photos, Search, Assistant, and Gmail. As for cost, below is a benchmark for cost comparison between TPU & GPU types: So, for this scenario, using TPU machine type is the recommended type to build Tensorflow models on. References: TPU Machine Type: \\u003chttps://cloud.google.com/tpu/\\u003eGPU Machine Type: \\u003chttps://cloud.google.com/gpu/\\u003e[https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep- learning   ](https://cloud.google.com/blog/products/ai-machine-learning/what-makes-tpus-fine-tuned-for-deep-learning)Using GPUs for training models in the cloud:[ https://cloud.google.com/ml-engine/docs/tensorflow/using-gpus](https://cloud.google.com/ml-engine/docs/tensorflow/using-gpus)",
       "source": "Whizlabs"
     },
     {
-      "id": "q110",
+      "id": "q115",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "The data scientists at your company have built a machine learning neural network model using TensorFlow. After several tests on the model, the team decides the model is ready to be deployed for production use. Which of the following services would you use to host the model to Google Cloud?",
@@ -1656,14 +1734,14 @@
         "Google Kubernetes Engine",
         "Google ML Deep Learning VM",
         "Google Container Registry",
-        "Google Machine Learning Model"
+        "Cloud Machine Learning Engine"
       ],
       "answer": 3,
-      "explanation": "Google Kubernetes Engine is a managed, production-ready environment for deploying containerized applications. It brings our latest innovations in developer productivity, resource efficiency, automated operations, and open-source flexibility to accelerate your time to market. Answer A is incorrect: GKE is a service to deploy and scale Docker containers in the cloud. You need to build the docker image for your model if you want to use it, which is not recommended for this scenario. Answer B is incorrect: Google ML Deep Learning VM is a service that offers pre-configured virtual machines for deep learning applications. It is not used to deploy ML models to production. Answer C is incorrect: Google Container Registry is a service to store, manage, and secure your Docker container images. It does not for deploying machine learning models. Cloud Machine Learning Engine is a managed service that lets developers and data scientists build and run superior machine learning models in production. Cloud ML Engine offers training and prediction services, which can be used together or individually. Answer D is correct: Google ML Model is the service to use to deploy your machine learning models.",
+      "explanation": "Google Kubernetes Engine is a managed, production-ready environment for deploying containerized applications. It brings our latest innovations in developer productivity, resource efficiency, automated operations, and open-source flexibility to accelerate your time to market. Answer A is incorrect: GKE is a service to deploy and scale Docker containers in the cloud. You need to build the docker image for your model if you want to use it, which is not recommended for this scenario.   Answer B is incorrect: Google ML Deep Learning VM is a service that offers pre-configured virtual machines for deep learning applications. It is not used to deploy ML models to production.   Answer C is incorrect: Google Container Registry is a service to store, manage, and secure your Docker container images. It does not for deploying machine learning models. Cloud Machine Learning Engine is a managed service that lets developers and data scientists build and run superior machine learning models in production. Cloud ML Engine offers training and prediction services, which can be used together or individually.   Answer D is correct: Cloud Machine Learning Engine is the managed service built specifically to deploy and serve machine learning models in production. References: Google Kubernetes Engine:[ https://cloud.google.com/kubernetes-engine/, ](https://cloud.google.com/kubernetes-engine/)Google Machine Learning Engine:[ https://cloud.google.com/ml-engine/,](https://cloud.google.com/ml-engine/) Google ML Deep Learning VM:[ https://cloud.google.com/deep-learning-vm/](https://cloud.google.com/deep-learning-vm/)",
       "source": "Whizlabs"
     },
     {
-      "id": "q111",
+      "id": "q116",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "An online learning platform wants to generate captions for its videos. The platform offers around 2,500 courses with topics about business, finance, cooking, development & science. The platform allows content with different languages such as French, German, Turkish and Thai. Thus, this can be very difficult for a single team to caption all available courses and they are looking for an approach which helps do such massive job.",
@@ -1674,11 +1752,11 @@
         "AutoML Vision API."
       ],
       "answer": 0,
-      "explanation": "Answer A is correct: Cloud Speech-to-Text is a service to generate captions from videos by detecting speakers language and speech. Answer B is incorrect: Cloud natural language service is to derive insights from unstructured text revealing meaning of the documents and categorize articles. It won\u2019t help extracting captions from videos. Answer C is incorrect: Machine Learning Engine is a managed service letting developers and scientists build their own models and run them in production. This means, you have to build your own model to generate text from videos which needs much effort and experience to build such model. So, it\u2019s not a practical solution for this scenario. Answer D is incorrect: AutoML Vision API is a service to recognize and derive insights from images by either using pre-trained models or training a custom model based on a set of photographics.",
+      "explanation": "Answer A is correct: Cloud Speech-to-Text is a service to generate captions from videos by detecting speakers language and speech.   Answer B is incorrect: Cloud natural language service is to derive insights from unstructured text revealing meaning of the documents and categorize articles. It won\u2019t help extracting captions from videos.   Answer C is incorrect: Machine Learning Engine is a managed service letting developers and scientists build their own models and run them in production. This means, you have to build your own model to generate text from videos which needs much effort and experience to build such model. So, it\u2019s not a practical solution for this scenario.   Answer D is incorrect: AutoML Vision API is a service to recognize and derive insights from images by either using pre-trained models or training a custom model based on a set of photographics. References: Google NLP:[ https://cloud.google.com/natural-language/](https://cloud.google.com/natural-language/), Google Machine Learning Engine:[ https://cloud.google.com/ml-engine/](https://cloud.google.com/ml-engine/), Google Vision API:[ https://cloud.google.com/vision](https://cloud.google.com/vision), Google Speech-to-Text API:[ https://cloud.google.com/speech-to-text/](https://cloud.google.com/speech-to-text/)",
       "source": "Whizlabs"
     },
     {
-      "id": "q112",
+      "id": "q117",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "You are building a machine learning model to solve a binary classification problem. The model is going to predict the likelihood of a customer to be using a fraudulent credit card when purchasing online.",
@@ -1689,11 +1767,11 @@
         "Precision"
       ],
       "answer": 1,
-      "explanation": "Precision is the formula to check how accurate the model is when most of the output are positives. In other words, if most of the output is yes. Recall: is the formula to check how accurate the model is when most of the output are negatives. In other words, if most of the output is no. Gradient Descent is an optimization algorithm to find the minimal value of a function. Gradient descent is used to find the minimal minimal RMSE or cost function. Feature Engineering is the process of deciding which data is important for the model. From the description, answers A & C are incorrect. It leaves us with B & D. Since the scenario mentions very little likelihood a transaction can be fraudulent. There are more \u201cno\u201d than \u201cyes\u201d means more negative than positive. Hence, to calculate the effectiveness of the model, you should use recall formula.",
+      "explanation": "Precision is the formula to check how accurate the model is when most of the output are positives. In other words, if most of the output is yes. Recall: is the formula to check how accurate the model is when most of the output are negatives. In other words, if most of the output is no. Gradient Descent is an optimization algorithm to find the minimal value of a function. Gradient descent is used to find the minimal minimal RMSE or cost function. Feature Engineering is the process of deciding which data is important for the model. From the description, answers A & C are incorrect. It leaves us with B & D. Since the scenario mentions very little likelihood a transaction can be fraudulent. There are more \u201cno\u201d than \u201cyes\u201d means more negative than positive. Hence, to calculate the effectiveness of the model, you should use recall formula. References: Precision & Recall:[ https://developers.google.com/machine-learning/crash-course/classification/ precision-and-recall](https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall), Gradient Descent:[ https://en.wikipedia.org/wiki/Gradient\\\\_descent](https://en.wikipedia.org/wiki/Gradient_descent), Feature Engineering:[ https://cloud.google.com/ml-engine/docs/tensorflow/data-prep](https://cloud.google.com/ml-engine/docs/tensorflow/data-prep)",
       "source": "Whizlabs"
     },
     {
-      "id": "q113",
+      "id": "q118",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
       "question": "You have over 2,000 video clips with dialog scenes and you need to transcribe the dialog to text. Since transcribing this amount of clips can be time-consuming, you want to find a product in Google Cloud which can achieve this instead. Which of the following is that best for this scenario?",
@@ -1704,38 +1782,41 @@
         "Cloud Speech-to-Text."
       ],
       "answer": 3,
-      "explanation": "Cloud Speech-to-Text is a service to generate captions from videos by detecting speakers language and speech. Google Cloud Speech-to-Text enables developers to convert audio to text by applying powerful neural network models in an easy-to-use API. The API recognizes 120 languages and variants to support your global user base. You can enable voice command-and-control, transcribe audio from call centers, and more. It can process real-time streaming or prerecorded audio, using Google\u2019s machine learning technology. Option A is incorrect: AutoML Vision API is a service to recognize and derive insights from images by either using pre-trained models or training a custom model based on a set of photographic. Option B is incorrect: Cloud natural language service is used to derive insights from unstructured text, revealing the meaning of the documents and categorize articles. It won\u2019t help in extracting captions from videos. Option C is incorrect: Machine Learning Engine is a managed service that allows developers and scientists to build their own models and run them in production. This means you have to build your own model to generate text from videos which needs much effort and experience to build such a model. So, it\u2019s not a practical solution for this scenario.",
+      "explanation": "Cloud Speech-to-Text is a service to generate captions from videos by detecting speakers language and speech. Google Cloud Speech-to-Text enables developers to convert audio to text by applying powerful neural network models in an easy-to-use API. The API recognizes 120 languages and variants to support your global user base. You can enable voice command-and-control, transcribe audio from call centers, and more. It can process real-time streaming or prerecorded audio, using Google\u2019s machine learning technology. Option A is incorrect: AutoML Vision API is a service to recognize and derive insights from images by either using pre-trained models or training a custom model based on a set of photographic.   Option B is incorrect: Cloud natural language service is used to derive insights from unstructured text, revealing the meaning of the documents and categorize articles. It won\u2019t help in extracting captions from videos.   Option C is incorrect: Machine Learning Engine is a managed service that allows developers and scientists to build their own models and run them in production. This means you have to build your own model to generate text from videos which needs much effort and experience to build such a model. So, it\u2019s not a practical solution for this scenario. References: Google Speech-to-Text API: \\u003chttps://cloud.google.com/speech-to-text/\\u003e, Google NLP:\\u003chttps://cloud.google.com/natural-language/\\u003e, Google Machine Learning Engine:\\u003chttps://cloud.google.com/ml-engine/\\u003e, Google Vision API:\\u003chttps://cloud.google.com/vision\\u003e",
       "source": "Whizlabs"
     },
     {
-      "id": "q114",
+      "id": "q119",
       "domain": "Operationalizing Machine Learning Models",
       "type": "single",
-      "question": "You are building a machine learning model using TensorFlow. The model aims to predict the next earthquake\u2019s locations, approximate time and Richter scale based on data records since 1913. The model needs tuning each number of epochs on training data for higher accuracy. Which of the variables are used for hyperparameter tuning?",
+      "question": "You receive bank transactions data through Cloud Pub/Sub and you need to analyze the data using Cloud data flow. The transactions are in the below format:",
       "choices": [
-        "Number of features",
-        "Number of hidden layers",
-        "Number of nodes in hidden layers",
-        "Weight values",
-        "Cloud PubSub has default retention period of 7 days.",
-        "The retention period for cloud pubsub is configurable and can be configured to a maximum of 28 days and a minimum of 10 minutes.",
-        "The retention period for cloud pubsub is configurable and can be configured to a maximum of 7 days and a minimum of 10 minutes.",
-        "Retention period for cloud pub/sub is not configurable and is set to 7 days by default.",
         "Regex.find",
         "Pardo",
         "Extract",
-        "Transform",
+        "Transform"
+      ],
+      "answer": 1,
+      "explanation": "Option A is incorrect. Regex.find will output Regex group containing all the lines that matches the regex. In this case we need the customer name to be extracted and placed into another PCollection for further processing.   Option B is correct. As ParDo helps in extracting parts from elements. We can use ParDo for filtering a dataset. ParDo can be used to consider each element in PCollection and either output that element to a new collection or discard it.   Option C is incorrect. Extract option does not exist in Cloud Dataflow.   Option D is incorrect. Transform is a step in your pipeline and it represents data processing operation.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q120",
+      "domain": "Operationalizing Machine Learning Models",
+      "type": "single",
+      "question": "You have some Hadoop jobs on-premise which the management of the company has decided to bring to Google Cloud Dataproc. Few of the jobs will still be running from on-premise hadoop cluster while other will be running from Cloud Dataproc. You need to orchestrate these jobs and add required dependencies between your on-premises and dataproc jobs. However, the company doesn\u2019t want any vendor lock-in and can move to AWS as well in future. The orchestration framework should be chosen which can accept all these future changes as well. Select the best possible option provided by GCP with very little overhead.",
+      "choices": [
         "Cloud Composer",
         "Apache Airflow",
         "Apache Oozie",
         "Cloud Scheduler"
       ],
-      "answer": 1,
-      "explanation": "Hyperparameters are the variables that govern the training process itself. For example, part of setting up a deep neural network is deciding how many hidden layers of nodes to use between the input layer and the output layer, and how many nodes each layer should use. These variables are not directly related to the training data but these are configuration variables. Note that parameters change during a training job, while hyperparameters are usually constant during a job. Option A is incorrect: Numbers of features is set by feature engineering, not hyperparameter tuning. Option D is incorrect: Weight values are set while training the model.",
+      "answer": 0,
+      "explanation": "Option A is correct. Cloud Composer allows you to pull workflows together from wherever they live, supporting a fully-functioning and connected cloud environment. Since Cloud Composer is built on[ Apache Airflow](https://cloud.google.com/blog/products/data-analytics/using-upstream-apache-airflow-hooks-and-operators-in-cloud-composer) \u2013 an open-source technology \u2013 it provides freedom from vendor lock-in as well as integration with a wide variety of platforms. We can connect to on-premise database from Cloud Composer. For connecting to on-premise database refer below link: [https://www.progress.com/tutorials/cloud-and-hybrid/connect-to-on-premises-databases-f rom-google-composer   ](https://www.progress.com/tutorials/cloud-and-hybrid/connect-to-on-premises-databases-from-google-composer)Option B is incorrect. As per question GCP service is required, Cloud Composer is built on top of Apache Airflow. Cloud Composer should be correct answer.   Option C is incorrect. Orchestration job using Apache Oozie does not support connecting to on-premises and dataproc at the same time. Also, Oozie can only be run with Hadoop. There is no managed service for Oozie in GCP.   Option D is incorrect. Cloud Scheduler is fully managed cron job scheduler. In this case, we need orchestration framework where dependencies between jobs will be present hence Cloud Scheduler is not the correct answer.",
       "source": "Whizlabs"
     },
     {
-      "id": "q115",
+      "id": "q121",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "What is the primary function of Identity and Access Management (IAM) in Google Cloud?",
@@ -1750,7 +1831,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q116",
+      "id": "q122",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "What is the primary function of BigQuery Data Transfer Service in Google Cloud?",
@@ -1765,7 +1846,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q117",
+      "id": "q123",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "In the context of streaming data processing, what best describes 'late arriving data'?",
@@ -1780,7 +1861,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q118",
+      "id": "q124",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Your data and applications reside in multiple geographies on Google Cloud. Some regional laws require you to hold your own keys outside of the cloud provider environment, whereas other laws are less restrictive and allow storing keys with the same provider who stores the data. The management of these keys has increased in complexity, and you need a solution that can centrally manage all your keys. What should you do?",
@@ -1795,7 +1876,7 @@
       "source": "PDE Question Bank (PDF) (Module 1)"
     },
     {
-      "id": "q119",
+      "id": "q125",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Your company is very serious about data protection and hence decides to implement the Principle of Least Privilege. What should you do to comply with this policy?",
@@ -1810,7 +1891,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q120",
+      "id": "q126",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You are creating a data pipeline for streaming data on Dataflow for Cymbal Retail's point of sales data. You want to calculate the total sales per hour on a continuous basis. Which of these windowing options should you use?",
@@ -1825,7 +1906,7 @@
       "source": "PDE Question Bank (PDF) (Module 2)"
     },
     {
-      "id": "q121",
+      "id": "q127",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You have data stored in a Cloud Storage bucket. You are using both Identity and Access Management (IAM) and Access Control Lists (ACLs) to configure access control. Which statement describes a user's access to objects in the bucket?",
@@ -1840,7 +1921,7 @@
       "source": "PDE Question Bank (PDF) (Module 3)"
     },
     {
-      "id": "q122",
+      "id": "q128",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You need to optimize the performance of queries in BigQuery. Your tables are not partitioned or clustered. What optimization technique can you use?",
@@ -1855,7 +1936,7 @@
       "source": "PDE Question Bank (PDF) (Module 4)"
     },
     {
-      "id": "q123",
+      "id": "q129",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Multiple analysts need to prepare reports on Monday mornings due to which there is heavy utilization of BigQuery. You want to take a cost-effective approach to managing this demand. What should you do?",
@@ -1870,7 +1951,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q124",
+      "id": "q130",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Your company recently migrated to Google Cloud and started using BigQuery. The team members don\u2019t know how much querying they are going to do, and they need to be efficient with their spend. As a Professional Data Engineer, what pricing model would you recommend?",
@@ -1885,7 +1966,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q125",
+      "id": "q131",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Stella is a new member of a team in your company who has been put in charge of monitoring VM instances in the organization. Stella will need the required permissions to perform this role. How should you grant her those permissions?",
@@ -1900,7 +1981,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q126",
+      "id": "q132",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You need to add new groups of employees in Cymbal Superstore\u2019s production environment. You need to consider Google\u2019s recommendation of using least privilege. What should you do?",
@@ -1915,7 +1996,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q127",
+      "id": "q133",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Fiona is the billing administrator for the project associated with Cymbal Superstore\u2019s eCommerce application. Jeffrey, the marketing department lead, wants to receive emails related to budget alerts. Jeffrey should have access to no additional billing information. What should you do?",
@@ -1930,7 +2011,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q128",
+      "id": "q134",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Cymbal Superstore\u2019s marketing department needs to load some slowly changing data into BigQuery. The data arrives hourly in a Cloud Storage bucket. You want to minimize cost and implement this in the fewest steps. What should you do?",
@@ -1945,7 +2026,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q129",
+      "id": "q135",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Cymbal Superstore\u2019s supply chain management system has been deployed and is working well. You are tasked with monitoring the system\u2019s resources so you can react quickly to any problems. You want to ensure the CPU usage of each of your Compute Engine instances in us-central1 remains below 60%. You want an incident created if it exceeds this value for 5 minutes. You need to configure the proper alerting policy for this scenario. What should you do?",
@@ -1960,7 +2041,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q130",
+      "id": "q136",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You are trying to assign roles to the dev and prod projects of Cymbal Superstore\u2019s e-commerce app but are receiving an error when you try to run set-iam policy. The projects are organized into an ecommerce folder in the Cymbal Superstore organizational hierarchy. You want to follow best practices for the permissions you need while respecting the practice of least privilege. What should you do?",
@@ -1975,7 +2056,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q131",
+      "id": "q137",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Cymbal Superstore is developing a new mobile app for end users to track their delivery status in real time. The app needs to securely receive data about truck location from a Pub/Sub topic. Following Google's recommended security practices for client-side applications accessing private Google Cloud data, how should the mobile app authenticate to obtain this data?",
@@ -1990,7 +2071,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q132",
+      "id": "q138",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "At Nimbus Outfitters you are planning storage for 25 TB of CSV files as part of a new analytics pipeline on Google Cloud. Teams across the company will run aggregate queries with different processing engines while the files remain in Cloud Storage. You want to keep the cost of running these aggregate queries as low as possible and still allow shared access across tools. Which storage approach and schema setup should you choose?",
@@ -2005,7 +2086,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q133",
+      "id": "q139",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Is it possible to convert an existing single master Cloud Dataproc cluster to a high availability cluster with three masters using gcloud, and if so which command should you run?",
@@ -2020,7 +2101,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q134",
+      "id": "q140",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "Given 300 TB of training data accessed roughly every 30 days, with each job reading only a small subset, which Google Cloud Storage class provides low cost while remaining reliable and highly available?",
@@ -2034,7 +2115,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q135",
+      "id": "q141",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "A fintech named OrionPay needs to orchestrate a multi stage analytics workflow that chains several Dataproc jobs and downstream Dataflow pipelines with strict task dependencies. The team wants a fully managed approach that provides retries, monitoring, and parameterized runs, and they must trigger it every weekday at 0315 UTC. Which Google Cloud service should they use to design and schedule this pipeline?",
@@ -2049,7 +2130,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q136",
+      "id": "q142",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You launched a Dataproc cluster to perform some Apache Spark jobs. You are looking for a method to securely transfer web traffic data between your machine\u2019s web browser and Dataproc cluster.",
@@ -2064,7 +2145,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q137",
+      "id": "q143",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Which of the following best describes the primary purpose of data governance in cloud data management?",
@@ -2079,7 +2160,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q138",
+      "id": "q144",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "In the context of data management, what is the primary purpose of data cataloging?",
@@ -2094,7 +2175,7 @@
       "source": "LearnGood"
     },
     {
-      "id": "q139",
+      "id": "q145",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You are migrating on-premises data to a data warehouse on Google Cloud. This data will be made available to business analysts. Local regulations require that customer information including credit card numbers, phone numbers, and email IDs be captured, but not used in analysis. You need to use a reliable, recommended solution to redact the sensitive data. What should you do?",
@@ -2109,7 +2190,7 @@
       "source": "PDE Question Bank (PDF) (Module 1)"
     },
     {
-      "id": "q140",
+      "id": "q146",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You are running a user-supplied DoFn method signature pipeline in Dataflow. The function has been defined by you. The code is running slow and you want to further examine the pipeline code to get better visibility of why. What should you do?",
@@ -2124,7 +2205,7 @@
       "source": "PDE Question Bank (PDF) (Module 1)"
     },
     {
-      "id": "q141",
+      "id": "q147",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Laws in the region where you operate require that files related to all orders made each day are stored immutably for 365 days. The solution that you recommend has to be cost-effective. What should you do?",
@@ -2139,7 +2220,7 @@
       "source": "PDE Question Bank (PDF) (Module 1)"
     },
     {
-      "id": "q142",
+      "id": "q148",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "A company collects lots of consumer data from online marketing campaigns. Company plans to use Google Cloud to store this collected data. The top management is worried about exposing personally identifiable information (PII) that may be present in this data. What should you do to reduce the risk of exposing PII data?",
@@ -2154,7 +2235,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q143",
+      "id": "q149",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You have data that is ingested daily and frequently analyzed in the first month. Thereafter, the data is retained only for audits, which happen occasionally every few years. You need to configure cost-effective storage. What should you do?",
@@ -2169,7 +2250,7 @@
       "source": "PDE Question Bank (PDF) (Module 3)"
     },
     {
-      "id": "q144",
+      "id": "q150",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "A manager at Cymbal Retail expresses concern about unauthorized access to objects in your Cloud Storage bucket. You need to evaluate all access on all objects in the bucket. What should you do?",
@@ -2184,7 +2265,7 @@
       "source": "PDE Question Bank (PDF) (Module 3)"
     },
     {
-      "id": "q145",
+      "id": "q151",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your data in BigQuery has some columns that are extremely sensitive. You need to enable only some users to see certain columns. What should you do?",
@@ -2199,7 +2280,7 @@
       "source": "PDE Question Bank (PDF) (Module 4)"
     },
     {
-      "id": "q146",
+      "id": "q152",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You need to share inventory data from Cymbal Retail with a partner company that uses BigQuery to store and analyze its data. What tool can you use to securely and efficiently share the data?",
@@ -2214,7 +2295,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q147",
+      "id": "q153",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You have a Dataflow pipeline in production. For certain data, the system seems to be stuck longer than usual. This is causing delays in the pipeline execution. You want to reliably and proactively track and resolve such issues. What should you do?",
@@ -2229,7 +2310,7 @@
       "source": "PDE Question Bank (PDF) (Module 5)"
     },
     {
-      "id": "q148",
+      "id": "q154",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Cymbal Retail uses Google Cloud and has automated repeatable data processing workloads to achieve reliability and cost efficiency. You want out-of-the-box metric collection dashboards and the ability to generate alerts when specific conditions are met. What tool can you use?",
@@ -2244,7 +2325,7 @@
       "source": "Datacamp"
     },
     {
-      "id": "q149",
+      "id": "q155",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Harborline Outfitters keeps tens of millions of records in a BigQuery date partitioned table named retail\\\\_ops.sales\\\\_events, and dashboards at example.com and internal services run aggregation queries dozens of times per minute. Each request calculates AVG, MAX and SUM across only the most recent 12 months of data, and the base table must preserve all historical rows for auditing. You want results that include brand new inserts while keeping compute cost, upkeep, and latency very low. What should you implement?",
@@ -2259,7 +2340,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q150",
+      "id": "q156",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "How should you design service account access to PII stored in Cloud Storage to enforce least privilege and enable auditability?",
@@ -2274,7 +2355,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q151",
+      "id": "q157",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "In Dataplex, how should you assign roles so engineers have full control of the sales lake and analysts have read-only access to curated data in the refined zone while maintaining governance within Dataplex?",
@@ -2289,7 +2370,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q152",
+      "id": "q158",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Aurora Streams is moving its legacy warehouse to BigQuery and wants stronger collaboration across about 24 internal groups. The company needs a design that lets data producers securely publish curated read only datasets that others can easily discover and subscribe to without tickets. They also want subscribers to read the freshest data while keeping storage and operational costs low. Which approach should they use?",
@@ -2304,7 +2385,7 @@
       "source": "The Server Side"
     },
     {
-      "id": "q153",
+      "id": "q159",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "A company needs to process large volumes of data for business-critical processes while minimizing costs. They are considering using Dataproc for their data processing needs. What should they consider when deciding between persistent or job-based data clusters in Dataproc?",
@@ -2315,11 +2396,11 @@
         "Job-based clusters offer better fault tolerance and error recovery mechanisms, making them suitable for mission-critical data processes, while persistent clusters are more cost-effective for one-time data transformations."
       ],
       "answer": 1,
-      "explanation": "Option B is CORRECT as job-based clusters in Dataproc provide flexibility and cost efficiency for intermittent workloads by provisioning resources only when needed, while persistent clusters are better suited for predictable, ongoing data processing tasks where resources are continuously required. Option A is incorrect because persistent clusters may not be the most cost-effective option for short-lived, ad-hoc tasks due to their continuous resource allocation. Option C is incorrect because persistent clusters are not specifically recommended for batch processing tasks, and job-based clusters can also handle batch processing effectively. Option D is incorrect because fault tolerance and error recovery mechanisms are not distinguishing factors between persistent and job-based clusters in Dataproc. Both types of clusters offer fault tolerance capabilities.",
+      "explanation": "Option B is CORRECT as job-based clusters in Dataproc provide flexibility and cost efficiency for intermittent workloads by provisioning resources only when needed, while persistent clusters are better suited for predictable, ongoing data processing tasks where resources are continuously required. Option A is incorrect because persistent clusters may not be the most cost-effective option for short-lived, ad-hoc tasks due to their continuous resource allocation. Option C is incorrect because persistent clusters are not specifically recommended for batch processing tasks, and job-based clusters can also handle batch processing effectively. Option D is incorrect because fault tolerance and error recovery mechanisms are not distinguishing factors between persistent and job-based clusters in Dataproc. Both types of clusters offer fault tolerance capabilities. Reference Link: \\u003chttps://cloud.google.com/dataproc/docs/concepts/compute/clusters-datalab-flex\\u003e",
       "source": "Whizlabs"
     },
     {
-      "id": "q154",
+      "id": "q160",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "An organization wants to automate its data processing workflows using Cloud Composer. They need to schedule jobs in a repeatable manner to ensure the timely execution of critical tasks. What approach should they take to achieve this goal effectively?",
@@ -2334,7 +2415,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q155",
+      "id": "q161",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your organization needs to organize data workloads based on business requirements, considering factors like flexibility, capacity, and pricing models. Which pricing model offers fixed capacity and is best suited for predictable, steady workloads?",
@@ -2349,7 +2430,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q156",
+      "id": "q162",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your organization needs to ensure the observability of data processes, monitor planned usage, and troubleshoot error messages and billing issues effectively. Which Google Cloud service provides centralized logging and monitoring capabilities for data processes?",
@@ -2364,7 +2445,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q157",
+      "id": "q163",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your organization operates critical data processes in a Google Cloud environment. You need to decide between persistent or job-based data clusters for processing large-scale data workloads efficiently. What should you consider when making this decision?",
@@ -2379,7 +2460,7 @@
       "source": "Whizlabs"
     },
     {
-      "id": "q158",
+      "id": "q164",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are using Dataproc to process a large number of CSV files. The storage option you choose needs to be flexible to serve many worker nodes in multiple clusters. These worker nodes will read the data and also write to it for intermediate storage between processing jobs. What is the recommended storage option on Google Cloud?",
@@ -2394,7 +2475,7 @@
       "source": "PDE Question Bank (Module 1)"
     },
     {
-      "id": "q159",
+      "id": "q165",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Cymbal Retail has accumulated a large amount of data. Analysts and leadership are finding it difficult to understand the meaning of the data, such as BigQuery columns. Users of the data don't know who owns what. You need to improve the searchability of the data. What should you do?",
@@ -2409,7 +2490,7 @@
       "source": "PDE Question Bank (Module 3)"
     },
     {
-      "id": "q160",
+      "id": "q166",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "[Bonus Quiz] A Dataflow pipeline at Cymbal Superstore must process transactions, writing valid records to BigQuery and records with a null transaction_id to a dead-letter location in Cloud Storage. What is the most efficient, idiomatic Dataflow pattern to achieve this?",
@@ -2424,7 +2505,7 @@
       "source": "PDE Question Bank (Module 5)"
     },
     {
-      "id": "q161",
+      "id": "q167",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You have a team of data analysts that run queries interactively on BigQuery during work hours. You also have thousands of report generation queries that run simultaneously. You often see: Exceeded rate limits: too many concurrent queries for this project_and_region. How would you resolve this issue?",
@@ -2439,7 +2520,7 @@
       "source": "PDE Question Bank (Module 5)"
     },
     {
-      "id": "q162",
+      "id": "q168",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "One of your encryption keys stored in Cloud KMS was exposed. You need to re-encrypt all of your CMEK-protected Cloud Storage data that used that key, and then delete the compromised key. You also want to reduce the risk of objects getting written without CMEK protection in the future. What should you do?",
@@ -2454,7 +2535,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q163",
+      "id": "q169",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You need to connect multiple applications with dynamic public IP addresses to a Cloud SQL instance. You configured users with strong passwords and enforced SSL. You want to use Cloud SQL public IP and ensure secured connections. What should you do?",
@@ -2469,7 +2550,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q164",
+      "id": "q170",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You are preparing an organization-wide dataset. You need to preprocess customer data stored in a restricted bucket in Cloud Storage. The data will be used to create consumer analyses. You need to comply with data privacy requirements. What should you do?",
@@ -2484,7 +2565,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q165",
+      "id": "q171",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your organization has two Google Cloud projects, project A and project B. In project A, you have a Pub/Sub topic that receives data from confidential sources. Only resources in project A should access the data in that topic, and no other current or future project should be able to. What should you do?",
@@ -2499,7 +2580,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q166",
+      "id": "q172",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You are on the data governance team and are implementing security requirements. You need to encrypt all your data in BigQuery using an encryption key managed by your team. You must generate and store encryption material only on your on-premises HSM. You want to rely on Google managed solutions. What should you do?",
@@ -2514,7 +2595,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q167",
+      "id": "q173",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You have an upstream process that writes data to Cloud Storage, read by a Spark job on Dataproc in us-central1, but data could be stored anywhere in the US. You need recovery for a catastrophic single region failure with RPO=15 mins, and minimal latency when reading data. What should you do?",
@@ -2529,7 +2610,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q168",
+      "id": "q174",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You maintain ETL pipelines. A streaming Dataflow pipeline is taking a long time to process incoming data, causing output delays, and the pipeline graph was automatically optimized and merged into one step. You want to identify where the bottleneck is occurring. What should you do?",
@@ -2544,7 +2625,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q169",
+      "id": "q175",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need to modernize your on-premises data strategy: Hadoop clusters with HDFS, and Airflow orchestrating hundreds of ETL pipelines with thousands of steps. You need a new GCP architecture requiring minimal changes to existing orchestration. What should you do?",
@@ -2559,7 +2640,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q170",
+      "id": "q176",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are designing a Cloud Storage architecture with pipelines reading raw data from one bucket and writing processed data to a second bucket. You want resilience to regional failure, minimized RPO, with no impact on applications. What should you do?",
@@ -2574,7 +2655,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q171",
+      "id": "q177",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You are building an ELT solution in BigQuery using Dataform. You need to perform uniqueness and null value checks on your final tables. What should you do to efficiently integrate these checks into your pipeline?",
@@ -2589,7 +2670,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q172",
+      "id": "q178",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "multi",
       "question": "[Choose two] You recently deployed several data processing jobs into your Cloud Composer 2 environment. Some tasks fail, and monitoring shows increased total workers memory usage and worker pod evictions. What should you do?",
@@ -2608,7 +2689,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q173",
+      "id": "q179",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "Your business users need to clean and prepare data before analysis, prefer GUIs for transformations, and then want to analyze the transformed data directly in a spreadsheet. What should you do?",
@@ -2623,7 +2704,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q174",
+      "id": "q180",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are designing a Dataflow pipeline for a batch processing job. You want to mitigate multiple zonal failures at job submission time. What should you do?",
@@ -2638,7 +2719,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q175",
+      "id": "q181",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Different teams store customer and performance data in BigQuery. Each team needs full control of their data, ability to query within their projects, and ability to exchange data with other teams. You need an org-wide solution minimizing operational tasks and costs. What should you do?",
@@ -2653,7 +2734,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q176",
+      "id": "q182",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "Your healthcare organization has data organized and managed by respective data owners across various storage services, making discovery and management difficult. You need a cost-optimized solution for data management/discovery, lineage tracking, and data quality validation. How should you build the solution?",
@@ -2668,7 +2749,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q177",
+      "id": "q183",
       "domain": "Designing Data Processing Systems",
       "type": "single",
       "question": "You want to store your team's shared tables in a single dataset, readable but unmodifiable by analysts, while giving each analyst an individual workspace in the same project for their own tables, inaccessible to other analysts. What should you do?",
@@ -2683,7 +2764,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q178",
+      "id": "q184",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You have several different file type data sources (Parquet, CSV). You want to store the data in Cloud Storage with an object sink that allows using your own encryption keys, and you want a GUI-based solution. What should you do?",
@@ -2698,7 +2779,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q179",
+      "id": "q185",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are designing a real-time ride-hailing demand system ingesting via Pub/Sub, aggregating supply/demand data for the last 30 seconds every 2 seconds, storing results in a low-latency system for real-time dashboards. What should you do?",
@@ -2713,7 +2794,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q180",
+      "id": "q186",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You have terabytes of customer behavioral data streaming into BigQuery daily, plus customer preferences in Cloud SQL (MySQL) and CRM on Cloud SQL (PostgreSQL). Marketing wants to combine all three for campaigns run 100-300 times/day, while keeping load on Cloud SQL minimal. What should you do?",
@@ -2728,7 +2809,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q181",
+      "id": "q187",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You have an Oracle database in a VM in a VPC network. You want to replicate and continuously synchronize 50 tables to BigQuery while minimizing infrastructure management. What should you do?",
@@ -2743,7 +2824,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q182",
+      "id": "q188",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You are using Workflows to call an API returning a 1KB JSON response, apply complex business logic (using Python's standard library, beyond what Workflows offers), then load a Cloud Storage file to BigQuery. You want simplicity and speed of execution. What should you do?",
@@ -2758,7 +2839,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q183",
+      "id": "q189",
       "domain": "Designing Data Processing Systems",
       "type": "single",
       "question": "You need to look at BigQuery data from a specific table multiple times a day. The underlying table is several petabytes, but you want to filter and provide simple aggregations to downstream users, running queries faster with up-to-date insights. What should you do?",
@@ -2773,7 +2854,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q184",
+      "id": "q190",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You administer a BigQuery on-demand environment. Your BI tool submits hundreds of daily queries aggregating a 50 TB sales history table at day/month levels, which are slow and over cost expectations. You need faster response, lower cost, and minimal maintenance. What should you do?",
@@ -2788,7 +2869,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q185",
+      "id": "q191",
       "domain": "Data Governance, Compliance, and Scalability",
       "type": "single",
       "question": "You designed a BigQuery data warehouse for sales data. You want a self-serving, low-maintenance, cost-effective way to share the sales dataset with other business units. What should you do?",
@@ -2803,7 +2884,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q186",
+      "id": "q192",
       "domain": "Ensuring Solution Quality (Security, Monitoring, Optimization)",
       "type": "single",
       "question": "You orchestrate ETL pipelines using Cloud Composer. One task in the Airflow DAG relies on a third-party service. You want to be notified when the task does not succeed. What should you do?",
@@ -2818,7 +2899,7 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q187",
+      "id": "q193",
       "domain": "Building and Operationalizing Data Pipelines",
       "type": "single",
       "question": "You need to create a SQL pipeline that runs an aggregate SQL transformation on a BigQuery table every two hours and appends the result to another table. It must retry on errors, and send an email after three consecutive failures. What should you do?",
@@ -2833,40 +2914,78 @@
       "source": "PDE Question Bank (Module 6)"
     },
     {
-      "id": "q188",
+      "id": "q194",
       "domain": "Operationalizing Machine Learning Models",
       "type": "multi",
       "question": "You want to launch a Cloud Machine Learning Engine cluster to deploy a deep neural network model built by Tensorflow by data scientists of your company. Reviewing the standard tiers available by Google ML Engine, you could not find a tier that suits the requirements data scientists need for the cluster. Google allows you to specify custom cluster specification.",
       "choices": [
         "workerCount",
-        "masterCount",
         "parameterServerCount",
+        "masterCount",
         "workerMemory"
+      ],
+      "answer": [
+        0,
+        1
+      ],
+      "explanation": "The Custom tier is not a set tier, but rather enables you to use your own cluster specification. When you use this tier, set values to configure your processing cluster according to these guidelines: - You must set TrainingInput.masterType to specify the type of machine to use for your master node. This is the only required setting. See the machine types described below.   - You may set TrainingInput.workerCount to specify the number of workers to use. If you specify one or more workers, you must also set TrainingInput.workerType to specify the type of machine to use for your worker nodes.   - You may set TrainingInput.parameterServerCount to specify the number of parameter servers to use. If you specify one or more parameter servers, you must also set TrainingInput.parameterServerType to specify the type of machine to use for your parameter servers. From the explanation, specifications can be set from the answers are workerCount & parameterServerCount.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q195",
+      "domain": "Operationalizing Machine Learning Models",
+      "type": "multi",
+      "question": "You are building a model using TensorFlow. Upon training the model, the results show that the model could return 73% true positives. When you tested the model with a set derived from real data. You noticed a decrease in true positive returns to 65%. You need to tune the model for better prediction. What would you do?",
+      "choices": [
+        "Increase feature parameters",
+        "Increase regularization",
+        "Decrease feature parameters",
+        "Decrease regularization"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "Overfitting happens when a model performs well on a training set, generating only a small error while giving wrong output for the test set. This happens because the model is only picking up specific features input found in the training set instead of picking out the general features of the given training set. To solve overfitting, the following would help in improving the model\u2019s quality: - Increase the number of examples, the more data a model is trained with, the more use cases the model can be training on and better improves its predictions.   - Tune hyperparameters which are related to number and size of hidden layers (for neural networks), and regularization, which means using techniques to make your model simpler such as using dropout method to remove neuron networks or adding \u201cpenalty\u201d parameters to the cost function.   - Remove features by removing irrelevant features. Feature engineering is a wide subject and feature selection is a critical part of building and training a model. Some algorithms have built-in feature selection, but in some cases, data scientists need to cherry-pick or manually select or remove features for debugging and finding the best model output. From the brief explanation, to solve the overfitting problem in the scenario, you need to:   - Increase the training set.   - Decrease features parameters.   - Increase regularization.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q196",
+      "domain": "Operationalizing Machine Learning Models",
+      "type": "multi",
+      "question": "You are building a machine learning model using TensorFlow. The model aims to predict the next earthquake\u2019s locations, approximate time and Richter scale based on data records since 1913. The model needs tuning each number of epochs on training data for higher accuracy. Which of the variables are used for hyperparameter tuning?",
+      "choices": [
+        "Number of features",
+        "Number of hidden layers",
+        "Number of nodes in hidden layers",
+        "Weight values"
+      ],
+      "answer": [
+        1,
+        2
+      ],
+      "explanation": "Hyperparameters are the variables that govern the training process itself. For example, part of setting up a deep neural network is deciding how many hidden layers of nodes to use between the input layer and the output layer, and how many nodes each layer should use. These variables are not directly related to the training data but these are configuration variables. Note that parameters change during a training job, while hyperparameters are usually constant during a job. Option A is incorrect: Numbers of features is set by feature engineering, not hyperparameter tuning.   Option D is incorrect: Weight values are set while training the model.",
+      "source": "Whizlabs"
+    },
+    {
+      "id": "q197",
+      "domain": "Operationalizing Machine Learning Models",
+      "type": "multi",
+      "question": "Choose all statement(s) which is/are correct for cloud pub/sub.",
+      "choices": [
+        "Cloud PubSub has default retention period of 7 days.",
+        "The retention period for cloud pubsub is configurable and can be configured to a maximum of 28 days and a minimum of 10 minutes.",
+        "The retention period for cloud pubsub is configurable and can be configured to a maximum of 7 days and a minimum of 10 minutes.",
+        "Retention period for cloud pub/sub is not configurable and is set to 7 days by default."
       ],
       "answer": [
         0,
         2
       ],
-      "explanation": "The Custom tier is not a set tier, but rather enables you to use your own cluster specification. When you use this tier, set values to configure your processing cluster according to these guidelines:\n\n  - You must set TrainingInput.masterType to specify the type of machine to use for your master node. This is the only required setting. See the machine types described below.\n  - You may set TrainingInput.workerCount to specify the number of workers to use. If you specify one or more workers, you must also set TrainingInput.workerType to specify the type of machine to use for your worker nodes",
-      "source": "Whizlabs"
-    },
-    {
-      "id": "q189",
-      "domain": "Operationalizing Machine Learning Models",
-      "type": "multi",
-      "question": "You are building a model using TensorFlow. Upon training the model, the results show that the model could return 73% true positives. When you tested the model with a set derived from real data. You noticed a decrease in true positive returns to 65%. You need to tune the model for better prediction. What would you do?",
-      "choices": [
-        "Decrease regularization",
-        "Decrease feature parameters",
-        "Increase feature parameters",
-        "Increase regularization"
-      ],
-      "answer": [
-        3,
-        1
-      ],
-      "explanation": "Overfitting happens when a model performs well on a training set, generating only a small error while giving wrong output for the test set. This happens because the model is only picking up specific features input found in the training set instead of picking out the general features of the given training set.\n\nTo solve overfitting, the following would help in improving the model\u2019s quality:\n\n  - Increase the number of examples, the more data a model is trained with, the more use cases the model can be training on and better improves its predictions.\n  - Tune hyperparameters which are related to",
+      "explanation": "Option A is correct. Cloud pub/sub has default retention period of 7 days.   Option B is incorrect. Cloud pub/sub retention period is configurable and can be configured to a maximum of 7 days and a minimum of 10 minutes.   Option C is correct. Cloud pub/sub retention period is configurable and can be configured to a maximum of 7 days and a minimum of 10 minutes   Option D is incorrect. Cloud pub/sub retention period is configurable.",
       "source": "Whizlabs"
     }
   ]
 }
+
+Displaying questions.json.
