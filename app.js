@@ -35,10 +35,22 @@ function shuffle(arr) {
 }
 
 async function init() {
-  const res = await fetch('questions.json');
-  BANK = await res.json();
-  renderHome();
-  bindNav();
+  try {
+    const res = await fetch('questions.json');
+    if (!res.ok) throw new Error(`questions.json returned HTTP ${res.status}`);
+    BANK = await res.json();
+    if (!BANK.questions || !BANK.questions.length) throw new Error('questions.json loaded but has no questions');
+    renderHome();
+    bindNav();
+  } catch (err) {
+    document.getElementById('viewHome').innerHTML =
+      `<div style="max-width:640px;margin:60px auto;padding:0 24px;font-family:sans-serif;">
+        <h2 style="color:#d93025;">Couldn't load the question bank</h2>
+        <p>${err.message}</p>
+        <p style="color:#5f6368;">Check that questions.json is uploaded in the same folder as index.html, and that it's valid JSON (try opening it directly in a browser tab to see if it loads).</p>
+      </div>`;
+    console.error('PDE Exam Prep failed to initialize:', err);
+  }
 }
 
 /* ================= HOME ================= */
