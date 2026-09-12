@@ -32,6 +32,14 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+function renderInlineMarkdown(escapedText) {
+  // text is already HTML-escaped; apply light **bold** / *italic* / _underline_ styling on top
+  return escapedText
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/_(.+?)_/g, '<u>$1</u>');
+}
+
 function shuffle(arr) {
   const a = arr.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -655,6 +663,7 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
 
   // Sidebar
   sidebarEl.innerHTML = '';
+  const collapsedState = loadSidebarCollapsedState(context);
   NOTES.domainOrder.forEach((domain) => {
     const domainNotes = NOTES.notes.filter((n) => n.domain === domain);
     if (domainNotes.length === 0) return;
@@ -664,11 +673,21 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
     const domainDiv = document.createElement('div');
     domainDiv.className = 'notes-sidebar-domain';
     const colors = DOMAIN_COLORS[domain] || {};
-    const title = document.createElement('div');
+    const isCollapsed = !term && collapsedState[domain];
+    if (isCollapsed) domainDiv.classList.add('collapsed');
+
+    const title = document.createElement('button');
     title.className = 'notes-sidebar-domain-title';
-    title.innerHTML = `<span class="dot" style="background:${colors.accent || '#999'}"></span>${escapeHtml(notesShortDomain(domain))}`;
+    title.innerHTML = `<span class="dot" style="background:${colors.accent || '#999'}"></span><span class="notes-sidebar-domain-label">${escapeHtml(notesShortDomain(domain))}</span><span class="notes-sidebar-domain-count">${domainNotes.length}</span><span class="notes-sidebar-domain-chevron">›</span>`;
+    title.addEventListener('click', () => {
+      domainDiv.classList.toggle('collapsed');
+      collapsedState[domain] = domainDiv.classList.contains('collapsed');
+      saveSidebarCollapsedState(context, collapsedState);
+    });
     domainDiv.appendChild(title);
 
+    const itemsWrap = document.createElement('div');
+    itemsWrap.className = 'notes-sidebar-items';
     domainNotes.forEach((n) => {
       const btn = document.createElement('button');
       btn.className = 'notes-sidebar-item';
@@ -683,8 +702,9 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
           saveNotesSessionState(context, n.id);
         }
       });
-      domainDiv.appendChild(btn);
+      itemsWrap.appendChild(btn);
     });
+    domainDiv.appendChild(itemsWrap);
     sidebarEl.appendChild(domainDiv);
   });
 
@@ -739,16 +759,59 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
     list.className = 'notes-bullet-list';
     n.bullets.forEach((b) => {
       const li = document.createElement('li');
-      // bold the "Topic:" lead-in if present, simple markdown-lite
-      const colonIdx = b.indexOf(':');
-      if (colonIdx > 0 && colonIdx < 60) {
-        li.innerHTML = `<strong>${escapeHtml(b.slice(0, colonIdx))}:</strong>${escapeHtml(b.slice(colonIdx + 1))}`;
+      if (typeof b === 'string') {
+        const colonIdx = b.indexOf(':');
+        if (colonIdx > 0 && colonIdx < 60) {
+          li.innerHTML = `<strong>${escapeHtml(b.slice(0, colonIdx))}:</strong>${escapeHtml(b.slice(colonIdx + 1))}`;
+        } else {
+          li.textContent = b;
+        }
       } else {
-        li.textContent = b;
+        let html = `<strong>${escapeHtml(b.term)}:</strong>`;
+        if (b.text) html += renderInlineMarkdown(escapeHtml(b.text));
+        if (b.sub && b.sub.length) {
+          html += '<ul class="notes-sub-list">' + b.sub.map((s) => `<li>${renderInlineMarkdown(escapeHtml(s))}</li>`).join('') + '</ul>';
+        }
+        li.innerHTML = html;
       }
       list.appendChild(li);
     });
     body.appendChild(list);
+
+    if (n.table) {
+      const tableWrap = document.createElement('div');
+      tableWrap.className = 'notes-table-wrap';
+      if (n.table.caption) {
+        const cap = document.createElement('div');
+        cap.className = 'notes-table-caption';
+        cap.textContent = n.table.caption;
+        tableWrap.appendChild(cap);
+      }
+      const table = document.createElement('table');
+      table.className = 'notes-table';
+      const thead = document.createElement('thead');
+      const headRow = document.createElement('tr');
+      n.table.headers.forEach((h) => {
+        const th = document.createElement('th');
+        th.textContent = h;
+        headRow.appendChild(th);
+      });
+      thead.appendChild(headRow);
+      table.appendChild(thead);
+      const tbody = document.createElement('tbody');
+      n.table.rows.forEach((row) => {
+        const tr = document.createElement('tr');
+        row.forEach((cell) => {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      tableWrap.appendChild(table);
+      body.appendChild(tableWrap);
+    }
 
     if (n.source) {
       const srcLine = document.createElement('p');
@@ -807,6 +870,13 @@ function saveNotesSessionState(context, expandedId) {
 }
 function loadNotesSessionState(context) {
   const saved = localStorage.getItem(`pde_notes_state_${context}`);
+  return saved ? JSON.parse(saved) : {};
+}
+function saveSidebarCollapsedState(context, state) {
+  localStorage.setItem(`pde_notes_sidebar_${context}`, JSON.stringify(state));
+}
+function loadSidebarCollapsedState(context) {
+  const saved = localStorage.getItem(`pde_notes_sidebar_${context}`);
   return saved ? JSON.parse(saved) : {};
 }
 
