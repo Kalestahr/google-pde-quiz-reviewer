@@ -14,15 +14,39 @@
       "images": [
         "GCP Services.png"
       ],
+      "source": "Edureka, \"What is Google Cloud Platform (GCP)?\" by Kislay Keshari",
       "bullets": [
-        "GCP Services: Google Cloud groups its offerings into a handful of categories, compute, networking, storage and databases, big data and analytics, AI and ML, identity and security, and management and developer tooling.",
-        "Compute options: the compute category spans Compute Engine (VMs), App Engine (managed app hosting), GKE (managed Kubernetes), Cloud Run and Cloud Run functions (serverless containers and functions).",
-        "Storage and databases: Cloud Storage for objects, Cloud SQL and Bigtable and Datastore/Firestore for structured and NoSQL data, Persistent Disk for block storage attached to VMs.",
-        "Big data stack: BigQuery for warehousing and analytics, Dataproc for Spark/Hadoop, Pub/Sub for messaging, all designed to work together in a pipeline.",
-        "Identity, security, and ops: Cloud IAM and Resource Manager handle access control, while the operations suite (formerly Stackdriver) covers logging, monitoring, tracing, and error reporting.",
-        "New accounts get a free trial credit for a limited period, which is a common way to explore services hands-on before committing to paid usage."
-      ],
-      "source": "Edureka, \"What is Google Cloud Platform (GCP)?\" by Kislay Keshari"
+        {
+          "term": "What GCP is",
+          "text": "Google Cloud Platform runs on the same global infrastructure Google uses internally for Search, Gmail, and YouTube. It's organized geographically into regions (independent geographic areas) each containing multiple zones (isolated failure domains within that region)."
+        },
+        {
+          "term": "Choosing where to run workloads",
+          "text": "You pick a region/zone based on three factors:",
+          "sub": [
+            "Latency: put resources close to your users",
+            "Availability: spread across zones/regions so one outage doesn't take everything down",
+            "Durability: some services replicate data across zones or regions automatically"
+          ]
+        },
+        {
+          "term": "The seven service categories",
+          "text": "Google organizes its catalog into these groups:",
+          "sub": [
+            "Compute \u2014 Compute Engine, App Engine, GKE, Cloud Run, Cloud Functions",
+            "Networking \u2014 VPC, Cloud Load Balancing, Cloud CDN, Cloud DNS",
+            "Storage and Databases \u2014 Cloud Storage, Cloud SQL, Bigtable, Spanner, Firestore",
+            "Big Data \u2014 BigQuery, Dataflow, Dataproc, Pub/Sub, Datalab",
+            "Machine Learning \u2014 Vertex AI, Vision API, Speech API, Natural Language API, Translation API",
+            "Identity & Security \u2014 Cloud IAM, Resource Manager, Cloud Security Scanner",
+            "Management and Developer Tools \u2014 Cloud Console, Cloud SDK, Deployment Manager"
+          ]
+        },
+        {
+          "term": "Getting started",
+          "text": "New accounts get a free trial credit for a limited period, a common way to explore services hands-on before committing to paid usage."
+        }
+      ]
     },
     {
       "id": "compute-options",
@@ -31,17 +55,40 @@
       "images": [
         "Choosing a Google Cloud compute option.png"
       ],
+      "source": "Google Cloud Blog, \"Where should I run my stuff?\" by Priyanka Vergadia & Brian Dorsey, Jul 2021",
       "bullets": [
-        "Choosing a Compute Option: the decision usually comes down to how much control you need over the underlying infrastructure versus how much you want Google to manage for you.",
-        "Compute Engine: full VM control (OS, CPU, memory, disks). Best fit for lift-and-shift migrations or workloads with specific OS/licensing needs.",
-        "GKE (Kubernetes): use when you need container orchestration, custom networking protocols, or portability across hybrid/multi-cloud environments.",
-        "Cloud Run: fully managed, serverless containers with HTTP/websocket support. Good for stateless services in any language, scales to zero.",
-        "App Engine: serverless platform purpose-built for complete web apps, handles scaling and versioning for you.",
-        "Cloud Run functions (Cloud Functions): event-driven, single-purpose functions triggered by things like Pub/Sub messages or Cloud Storage changes.",
-        "Billing model differs too: Compute Engine and GKE bill per provisioned resource (with sustained/committed-use discounts available), while Cloud Run, App Engine, and Cloud Functions bill per request/execution.",
-        "Team size matters: small teams that want to focus purely on code tend toward serverless (Cloud Run, App Engine); larger teams with their own CI/CD and ops practices often prefer Compute Engine or GKE for full control."
-      ],
-      "source": "Google Cloud Blog, \"Where should I run my stuff?\" by Priyanka Vergadia & Brian Dorsey, Jul 2021"
+        {
+          "term": "The five options",
+          "text": "Compute Engine (VMs you fully configure), GKE (managed Kubernetes clusters), Cloud Run (managed serverless containers), App Engine (fully managed serverless web apps), and Cloud Functions (single event-triggered functions)."
+        },
+        {
+          "term": "Question 1: how much infrastructure control do you need?",
+          "text": "If you need control over OS, disk images, CPU/RAM, or kernel-level settings, that points to Compute Engine, typical for legacy migrations or systems with a specific OS requirement. If your app is already containerized, GKE or Cloud Run are the two main paths."
+        },
+        {
+          "term": "Question 2: what's your actual workload shape?",
+          "text": "",
+          "sub": [
+            "A simple HTTP-based app you want fully hosted \u2192 App Engine",
+            "A single function reacting to an event (HTTP, Pub/Sub, Cloud Storage) \u2192 Cloud Functions",
+            "A containerized app needing HTTP/websocket support in any language \u2192 Cloud Run",
+            "An app needing a specific OS, custom network protocols, or hybrid/multi-cloud portability (via Anthos) \u2192 GKE",
+            "A legacy app with specific licensing/OS/kernel requirements (e.g. Windows apps, SAP HANA, genomics) \u2192 Compute Engine"
+          ]
+        },
+        {
+          "term": "Question 3: do you need open-source portability?",
+          "text": "GKE, Cloud Run, and Cloud Functions are all built on open-source foundations (Kubernetes, Knative, and an open FaaS framework respectively), which avoids vendor lock-in and eases hybrid/multi-cloud moves."
+        },
+        {
+          "term": "Question 4: what are your team dynamics?",
+          "text": "Small teams that want to focus purely on code lean toward serverless (Cloud Run, App Engine), no one has to manage infrastructure, scaling, or ops. Larger teams with their own CI/CD, security, and ops practices often prefer Compute Engine or GKE for full control."
+        },
+        {
+          "term": "Question 5: what billing model fits?",
+          "text": "Compute Engine and GKE bill per provisioned resource, you pay for what's running whether or not it's busy (offset by sustained/committed-use discounts). Cloud Run, App Engine, and Cloud Functions bill per request, pure pay-as-you-go."
+        }
+      ]
     },
     {
       "id": "paas-iaas-saas",
@@ -51,16 +98,60 @@
         "PaaS vs IaaS vs SaaS1.png",
         "PaaS vs IaaS vs SaaS2.png"
       ],
+      "source": "Google Cloud, \"PaaS vs. IaaS vs. SaaS vs. CaaS\"",
       "bullets": [
-        "IaaS vs PaaS vs SaaS vs CaaS: these describe how much of the stack the cloud provider manages for you versus how much you manage yourself.",
-        "IaaS (Infrastructure as a Service): you get raw compute, storage, and networking; you're responsible for the OS, runtime, and everything above it. Example: Compute Engine.",
-        "CaaS (Containers as a Service): the provider manages the container runtime environment; you bring the container image and control scaling/runtime yourself. Example: GKE.",
-        "PaaS (Platform as a Service): you bring code, the provider handles servers, scaling, and the runtime environment entirely. Examples: App Engine, Cloud Run.",
-        "FaaS (Function as a Service): an even narrower slice, you deploy a single function and the provider handles everything else, including scale-to-zero. Example: Cloud Functions.",
-        "SaaS (Software as a Service): a complete, ready-to-use application delivered over the browser with no infrastructure management at all on your end. Example: Google Workspace.",
-        "Trade-off in one line: less management responsibility generally means less low-level control, and vice versa. None of these are mutually exclusive, real architectures usually mix several."
+        {
+          "term": "The core idea",
+          "text": "These four models sit on a spectrum of how much of the technology stack the cloud provider manages for you versus how much you're responsible for yourself. Less management responsibility generally means less low-level control, and the models aren't mutually exclusive, most real architectures mix several."
+        }
       ],
-      "source": "Google Cloud, \"PaaS vs. IaaS vs. SaaS vs. CaaS\""
+      "table": {
+        "caption": "Comparing the four service models",
+        "headers": [
+          "Model",
+          "You manage",
+          "Provider manages",
+          "GCP example",
+          "Typical use when..."
+        ],
+        "rows": [
+          [
+            "IaaS",
+            "OS, runtime, apps, data",
+            "Physical hardware, virtualization, storage, networking",
+            "Compute Engine",
+            "You need full control, e.g. lift-and-shift migrations"
+          ],
+          [
+            "CaaS",
+            "Container image, scaling/runtime config",
+            "Container orchestration runtime",
+            "GKE",
+            "You want container orchestration without managing bare VMs"
+          ],
+          [
+            "PaaS",
+            "Code and data only",
+            "Servers, scaling, OS, runtime entirely",
+            "App Engine, Cloud Run",
+            "You just want to ship code and let the platform run it"
+          ],
+          [
+            "FaaS",
+            "A single function's code",
+            "Everything else, including scale-to-zero",
+            "Cloud Functions",
+            "You need one small piece of logic to react to an event"
+          ],
+          [
+            "SaaS",
+            "Just your data and configuration",
+            "The entire application",
+            "Google Workspace",
+            "You want a ready-to-use application with zero infra management"
+          ]
+        ]
+      }
     },
     {
       "id": "gcp-networking",
@@ -69,15 +160,58 @@
       "images": [
         "Google Cloud Networking.png"
       ],
+      "source": "Google Cloud Blog, \"Google Cloud Networking overview\" by Priyanka Vergadia, Oct 2021",
       "bullets": [
-        "GCP Networking: Google's physical network is organized into regions (geographic areas with round-trip time typically under 1ms between VMs) subdivided into zones (independent failure domains, so a failure in one zone doesn't take down another).",
-        "Physical backbone: three network layers work together, a data center network connecting machines, a private backbone WAN linking data centers, and a public-facing WAN for user traffic entering Google's network. Traffic between two Google Cloud resources never has to leave Google's own backbone.",
-        "Connect: Cloud Interconnect (dedicated line) or Cloud VPN (IPSec tunnel) link on-prem environments to a VPC; Shared VPC lets multiple projects share one network while staying logically separated (e.g., prod vs dev); Cloud DNS manages public/private DNS zones.",
-        "Scale: Cloud Load Balancing distributes traffic across regions behind a single anycast IP; Cloud CDN caches content at Google's edge to cut latency and origin load.",
-        "Secure: VPC firewall rules control instance-level traffic; Cloud Armor defends HTTP(S) load balancers against DDoS and layer 7 attacks; Cloud NAT lets private instances reach the internet outbound without a public IP; Cloud IAP replaces VPN-style access with identity-aware, context-based access control.",
-        "Modernize: Traffic Director provides a global service mesh for microservices outside a single cluster; Service Directory acts as a real-time registry for discovering and connecting services across environments."
-      ],
-      "source": "Google Cloud Blog, \"Google Cloud Networking overview\" by Priyanka Vergadia, Oct 2021"
+        {
+          "term": "Physical foundation",
+          "text": "Google's network is organized into regions (round-trip time typically under 1ms between VMs within one) subdivided into zones, independent failure domains so one zone's outage doesn't take down another.",
+          "sub": [
+            "Data center network: connects machines within a single data center",
+            "Private backbone WAN: Google's own private fiber linking data centers to each other",
+            "Public-facing WAN: where user traffic enters Google's network from the public internet"
+          ]
+        },
+        {
+          "term": "Key insight",
+          "text": "Traffic between two Google Cloud resources never has to leave Google's own backbone, it stays on Google's private fiber the entire way, which is part of why intra-Google-Cloud latency is so low."
+        },
+        {
+          "term": "Connect (hybrid & multi-network)",
+          "text": "",
+          "sub": [
+            "Cloud Interconnect \u2014 a dedicated physical line linking on-prem to a VPC",
+            "Cloud VPN \u2014 an IPSec tunnel over the public internet, cheaper but less consistent than Interconnect",
+            "Shared VPC \u2014 lets multiple projects share one network while staying logically separated (e.g. prod vs dev)",
+            "Cloud DNS \u2014 managed public and private DNS zones"
+          ]
+        },
+        {
+          "term": "Scale",
+          "text": "",
+          "sub": [
+            "Cloud Load Balancing distributes traffic across regions behind a single anycast IP",
+            "Cloud CDN caches content at Google's edge locations to cut latency and reduce load on the origin"
+          ]
+        },
+        {
+          "term": "Secure",
+          "text": "",
+          "sub": [
+            "VPC firewall rules \u2014 control instance-level traffic",
+            "Cloud Armor \u2014 defends HTTP(S) load balancers against DDoS and layer-7 attacks",
+            "Cloud NAT \u2014 lets private instances reach the internet outbound without needing a public IP",
+            "Cloud IAP (Identity-Aware Proxy) \u2014 replaces VPN-style network access with identity-aware, context-based access control"
+          ]
+        },
+        {
+          "term": "Modernize",
+          "text": "",
+          "sub": [
+            "Traffic Director \u2014 a global service mesh control plane for microservices spanning more than one cluster",
+            "Service Directory \u2014 a real-time registry for discovering and connecting services across environments"
+          ]
+        }
+      ]
     },
     {
       "id": "gcp-storage",
@@ -86,17 +220,68 @@
       "images": [
         "Google Cloud Storage.png"
       ],
+      "source": "Medium, \"Google Cloud Storage Made Simple\" by Nikhil Mogre, Jan 2026",
       "bullets": [
-        "Cloud Storage basics: an object storage system, data is stored as immutable objects inside buckets (not traditional folders/files). Buckets are globally unique and created in a region or multi-region. Uploading a file with the same name replaces the old object rather than modifying it in place.",
-        "Storage classes trade cost against access frequency: Standard (frequent/hot data, highest storage cost, lowest access cost, no minimum duration), Nearline (roughly monthly access), Coldline (roughly quarterly access), Archive (yearly or less, cheapest storage but highest retrieval cost and longest minimum duration).",
-        "SLA and availability: a 99.9% SLA allows about 43 minutes of downtime a month, 99.95% allows about 22 minutes, higher availability commitments generally track with Standard storage.",
-        "Object Versioning: keeps prior versions of an object when it's overwritten or deleted, useful for recovering from accidental changes, though all retained versions are stored and billed until cleaned up.",
-        "Uniform Bucket-Level Access (UBLA): enforces permissions purely through IAM at the bucket level and disables legacy per-object ACLs, the recommended default since it's simpler to audit and reduces accidental public exposure.",
-        "IAM vs ACLs: IAM is the modern, recommended access-control method (project or bucket level); ACLs are the legacy, object-level method, harder to manage at scale and generally discouraged for new systems.",
-        "Lifecycle management: rules can automatically transition objects to cheaper classes or delete them based on age, date, or storage class, e.g., Standard to Nearline after 30 days, Coldline after 90, delete after a year, removing the need for manual cleanup.",
-        "Security: encryption at rest and in transit is on by default; customer-managed encryption keys are available for extra control; retention policies and object holds add a compliance layer that blocks deletion or overwrite for a set period."
+        {
+          "term": "Core model",
+          "text": "Cloud Storage holds immutable objects inside buckets (not traditional folders/files). Buckets are globally unique and live in a region, dual-region, or multi-region. Uploading a file with the same name replaces the object rather than editing it in place."
+        },
+        {
+          "term": "SLA and availability",
+          "text": "A 99.9% SLA allows about 43 minutes of downtime a month; 99.95% allows about 22 minutes. Higher availability commitments generally track with Standard storage in multi-region configurations."
+        },
+        {
+          "term": "Object Versioning",
+          "text": "Keeps prior versions of an object when it's overwritten or deleted, useful for recovering from accidental changes, though every retained version is stored and billed until you clean it up."
+        },
+        {
+          "term": "Uniform Bucket-Level Access (UBLA)",
+          "text": "Enforces permissions purely through IAM at the bucket level and disables legacy per-object ACLs. This is the recommended default since it's simpler to audit and reduces the risk of accidental public exposure."
+        },
+        {
+          "term": "IAM vs ACLs here specifically",
+          "text": "IAM is the modern, recommended access-control method (project or bucket level). ACLs are the legacy, object-level method, harder to manage at scale and generally discouraged for new systems."
+        },
+        {
+          "term": "Security add-ons",
+          "text": "Encryption at rest and in transit is on by default. Customer-managed encryption keys (CMEK) are available for extra control. Retention policies and object holds add a compliance layer that blocks deletion or overwrite for a set period, useful for legal hold or regulatory requirements."
+        }
       ],
-      "source": "Medium, \"Google Cloud Storage Made Simple\" by Nikhil Mogre, Jan 2026"
+      "table": {
+        "caption": "Storage classes by access pattern",
+        "headers": [
+          "Class",
+          "Typical access frequency",
+          "Minimum storage duration",
+          "Relative cost pattern"
+        ],
+        "rows": [
+          [
+            "Standard",
+            "Frequent / hot data",
+            "None",
+            "Highest storage cost, lowest access cost"
+          ],
+          [
+            "Nearline",
+            "Roughly monthly",
+            "30 days",
+            "Lower storage cost, moderate access cost"
+          ],
+          [
+            "Coldline",
+            "Roughly quarterly",
+            "90 days",
+            "Lower still, higher access cost"
+          ],
+          [
+            "Archive",
+            "Yearly or less",
+            "365 days",
+            "Cheapest storage, highest retrieval cost/latency"
+          ]
+        ]
+      }
     },
     {
       "id": "storage-types",
@@ -105,14 +290,32 @@
       "images": [
         "Object storage vs block storage vs file storage.png"
       ],
+      "source": "Google Cloud Blog, \"A map of storage options in Google Cloud\" by Priyanka Vergadia, May 2021",
       "bullets": [
-        "Object storage (Cloud Storage): stores binary/unstructured data as objects with an ID, metadata, and the actual bytes. Good for any data type, any duration, highly durable and available. Common uses: streaming video, images/documents serving, backups, archives, and disaster recovery.",
-        "Cloud Storage has four classes based on access frequency and budget, Standard (frequent access, regional/dual-region for high throughput or multi-region for global serving), Nearline (roughly monthly access), Coldline (roughly quarterly access), Archive (rarely accessed, years-long retention).",
-        "Block storage (Persistent Disk and Local SSD): data is split into fixed-size blocks with no metadata context, mounted directly as a drive by the OS. Persistent Disk attaches to Compute Engine/GKE and suits VM boot disks, shared read-only data, backups, and databases needing consistent performance.",
-        "Local SSD is also block storage but ephemeral (tied to the VM's lifetime), used for stateless workloads needing the lowest possible latency, like caching layers, scratch disks, or flash-optimized databases.",
-        "File storage (Filestore): a fully managed NFS-style shared file system for unstructured data, supports concurrent access from many clients with predictable low-latency performance. Suited to workloads like HPC, media processing, EDA, and app migrations that expect a traditional shared filesystem."
-      ],
-      "source": "Google Cloud Blog, \"A map of storage options in Google Cloud\" by Priyanka Vergadia, May 2021"
+        {
+          "term": "Object storage (Cloud Storage)",
+          "text": "Stores binary/unstructured data as objects, each with an ID, metadata, and the actual bytes, no filesystem hierarchy underneath. Highly durable and available, works for any data type or duration.",
+          "sub": [
+            "Standard: frequent access, regional/dual-region for high throughput, multi-region for global serving",
+            "Nearline: roughly monthly access",
+            "Coldline: roughly quarterly access",
+            "Archive: rarely accessed, years-long retention",
+            "Common uses: streaming video, serving images/documents, backups, disaster recovery archives"
+          ]
+        },
+        {
+          "term": "Block storage (Persistent Disk & Local SSD)",
+          "text": "Data is split into fixed-size blocks with no metadata context, and mounted directly as a drive by the OS.",
+          "sub": [
+            "Persistent Disk: attaches to Compute Engine/GKE, good for VM boot disks, shared read-only data, backups, and databases needing consistent performance",
+            "Local SSD: also block storage but ephemeral, tied to the VM's lifetime, used for the lowest possible latency (caching layers, scratch disks, flash-optimized databases)"
+          ]
+        },
+        {
+          "term": "File storage (Filestore)",
+          "text": "A fully managed NFS-style shared file system for unstructured data. Supports concurrent access from many clients with predictable low latency. Fits workloads expecting a traditional shared filesystem, HPC, media processing, EDA, and app migrations."
+        }
+      ]
     },
     {
       "id": "gcp-databases",
@@ -121,14 +324,52 @@
       "images": [
         "Google Cloud database.png"
       ],
+      "source": "Google Cloud Blog, \"Your Google Cloud database options, explained\" by Priyanka Vergadia, Aug 2021",
       "bullets": [
-        "Database choice depends on workload: relational (SQL) databases suit structured data with a stable schema and need ACID guarantees; non-relational (NoSQL) suits large-scale, frequently changing, or varied data shapes.",
-        "ACID stands for Atomic (all-or-nothing transactions), Consistent (the DB stays structurally valid), Isolated (concurrent transactions don't interfere), Durable (committed changes survive failures). This matters most for financial/transactional workloads.",
-        "Relational options: Cloud SQL (managed MySQL/PostgreSQL/SQL Server, general-purpose apps like CRM/ERP/e-commerce), AlloyDB (PostgreSQL-compatible, built for demanding enterprise workloads with much faster analytical performance), Cloud Spanner (globally distributed, strongly consistent, combines relational structure with NoSQL-style horizontal scale, used for gaming/payments/global ledgers), and Bare Metal Solution (dedicated hardware, typically for lifting Oracle workloads as-is).",
-        "Non-relational qualities: usually optimized for one access pattern (key-value, graph, wide-column), scale horizontally, and often favor eventual consistency, though Firestore is a notable exception offering strong consistency and ACID transactions across shards.",
-        "Non-relational options by shape: document (Firestore, JSON-like documents), key-value (Bigtable, Memorystore), in-memory (Memorystore, microsecond latency), wide-column (Bigtable, flexible per-row schema), and graph (e.g., JanusGraph, for relationship-heavy data)."
+        {
+          "term": "How to choose",
+          "text": "Relational (SQL) suits structured data with a stable schema that needs ACID guarantees. Non-relational (NoSQL) suits large-scale, frequently-changing, or varied-shape data."
+        },
+        {
+          "term": "ACID, defined",
+          "text": "",
+          "sub": [
+            "Atomic \u2014 transactions are all-or-nothing",
+            "Consistent \u2014 the database stays structurally valid after every transaction",
+            "Isolated \u2014 concurrent transactions don't interfere with each other",
+            "Durable \u2014 committed changes survive failures"
+          ]
+        },
+        {
+          "term": "NoSQL's trade-off",
+          "text": "Non-relational databases are usually optimized for one specific access pattern and scale horizontally, often favoring eventual consistency, though Firestore is a notable exception, it offers strong consistency and ACID transactions even across shards."
+        }
       ],
-      "source": "Google Cloud Blog, \"Your Google Cloud database options, explained\" by Priyanka Vergadia, Aug 2021"
+      "table": {
+        "caption": "Relational options",
+        "headers": [
+          "Service",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "Cloud SQL",
+            "General-purpose apps (CRM, ERP, e-commerce) needing managed MySQL/PostgreSQL/SQL Server"
+          ],
+          [
+            "AlloyDB",
+            "PostgreSQL-compatible, built for demanding enterprise workloads with much faster analytics performance"
+          ],
+          [
+            "Cloud Spanner",
+            "Global, strongly consistent, horizontally scalable, used for gaming, payments, global ledgers"
+          ],
+          [
+            "Bare Metal Solution",
+            "Lifting Oracle workloads onto dedicated hardware as-is"
+          ]
+        ]
+      }
     },
     {
       "id": "cloud-sql",
@@ -137,16 +378,40 @@
       "images": [
         "What is Cloud SQL.png"
       ],
+      "source": "Google Cloud Blog, \"What is Cloud SQL?\" by Priyanka Vergadia & Gabe Weiss, Sep 2021",
       "bullets": [
-        "Cloud SQL: a fully managed relational database service for MySQL, PostgreSQL, and SQL Server. It automates provisioning, storage scaling, backups, and offers built-in high availability and failover.",
-        "Setup: pick a region/zone, configure machine type (CPU/memory) to fit the workload, and choose SSD or HDD storage depending on latency, IOPS, and cost needs.",
-        "Reliability: automated backups with point-in-time recovery; enabling high availability (targeting a 99.95% SLA) adds a standby that Cloud SQL fails over to automatically if the primary goes down; cross-region read replicas add protection against a full regional outage; storage can also auto-grow as usage nears capacity.",
-        "Cloud SQL Insights is a free built-in tool for diagnosing query performance issues beyond basic monitoring.",
-        "Migration: Database Migration Service (DMS) handles moving existing MySQL/PostgreSQL databases (on-prem, other clouds, or other GCP compute) into Cloud SQL with continuous replication for minimal downtime, connecting via IP allowlisting, a reverse SSH tunnel, or VPC peering.",
-        "Security: encryption at rest and in transit by default, SSL-only connections can be enforced, and the Cloud SQL Auth Proxy gives a secure local connection method. Cloud SQL meets common compliance standards (SSAE 16, ISO 27001, PCI DSS, HIPAA).",
-        "Typical pairing: Cloud SQL as the transactional store, combined with BigQuery for analytics, Vertex AI for predictions, and Datastream/CDC to stream changes out in near real time."
-      ],
-      "source": "Google Cloud Blog, \"What is Cloud SQL?\" by Priyanka Vergadia & Gabe Weiss, Sep 2021"
+        {
+          "term": "What it is",
+          "text": "A fully managed relational database service for MySQL, PostgreSQL, and SQL Server. It automates provisioning, storage scaling, backups, and offers built-in high availability and failover."
+        },
+        {
+          "term": "Setup decisions",
+          "text": "Pick a region/zone, size the machine type (CPU/memory) to fit the workload, and choose SSD or HDD storage depending on latency, IOPS, and cost needs."
+        },
+        {
+          "term": "Reliability features",
+          "text": "",
+          "sub": [
+            "Automated backups with point-in-time recovery",
+            "High availability (targets a 99.95% SLA) \u2014 adds a standby that Cloud SQL fails over to automatically if the primary goes down",
+            "Cross-region read replicas \u2014 protect against a full regional outage",
+            "Storage auto-grow \u2014 expands automatically as usage nears capacity",
+            "Cloud SQL Insights \u2014 a free built-in tool for diagnosing query performance issues beyond basic monitoring"
+          ]
+        },
+        {
+          "term": "Migration path",
+          "text": "Database Migration Service (DMS) moves existing MySQL/PostgreSQL databases (on-prem, other clouds, or other GCP compute) into Cloud SQL with continuous replication for minimal downtime, connecting via IP allowlisting, a reverse SSH tunnel, or VPC peering."
+        },
+        {
+          "term": "Security & compliance",
+          "text": "Encryption at rest and in transit by default, SSL-only connections can be enforced, and the Cloud SQL Auth Proxy gives a secure local connection method. Meets common compliance standards (SSAE 16, ISO 27001, PCI DSS, HIPAA)."
+        },
+        {
+          "term": "Typical pairing",
+          "text": "Cloud SQL as the transactional store, combined with BigQuery for analytics, Vertex AI for predictions, and Datastream/CDC to stream changes out in near real time."
+        }
+      ]
     },
     {
       "id": "gke-architecture",
@@ -155,15 +420,33 @@
       "images": [
         "Google Kubernetes Engine (GKE).png"
       ],
+      "source": "Google Cloud official documentation, \"GKE cluster architecture\"",
       "bullets": [
-        "GKE cluster architecture: every cluster has a control plane and worker nodes. In Autopilot mode GKE manages both the control plane and the nodes; in Standard mode GKE manages the control plane while you manage the nodes.",
-        "Control plane: runs the Kubernetes API server, scheduler, and core resource controllers. It's the single endpoint you interact with (via kubectl or direct API calls), and all cluster components act as clients of it.",
-        "Cluster state storage: GKE stores cluster state either in etcd instances on the control plane VMs, or in Spanner (outside the control plane) depending on configuration; either way the API server always exposes an etcd-compatible API.",
-        "Nodes: Compute Engine VMs that run your Pods, each with a kubelet agent that talks to the control plane and manages container startup. Shielded GKE Nodes use a virtual TPM to cryptographically verify node identity during registration.",
-        "Autopilot vs Standard for nodes: Autopilot fully manages node lifecycle, scaling, and OS (always Container-Optimized OS); Standard gives you control over machine types, node pool sizing, and lets you SSH into the underlying VM directly.",
-        "Best practice: deploy across multiple regions to protect availability if an Artifact Registry outage or regional issue disrupts cluster creation or upgrades in one location."
-      ],
-      "source": "Google Cloud official documentation, \"GKE cluster architecture\""
+        {
+          "term": "Two pieces of every cluster",
+          "text": "A control plane and worker nodes. In Autopilot mode GKE manages both; in Standard mode GKE manages the control plane while you manage the nodes."
+        },
+        {
+          "term": "Control plane",
+          "text": "Runs the Kubernetes API server, scheduler, and core resource controllers, it's the single endpoint you interact with (via kubectl or direct API calls), and every cluster component acts as a client of it."
+        },
+        {
+          "term": "Where cluster state lives",
+          "text": "GKE stores cluster state either in etcd instances on the control plane VMs, or in Spanner outside the control plane, depending on configuration. Either way, the API server always exposes an etcd-compatible API."
+        },
+        {
+          "term": "Nodes",
+          "text": "Compute Engine VMs that run your Pods, each with a kubelet agent that talks to the control plane and manages container startup. Shielded GKE Nodes use a virtual TPM to cryptographically verify node identity at registration time."
+        },
+        {
+          "term": "Autopilot vs Standard, for nodes specifically",
+          "text": "Autopilot fully manages node lifecycle, scaling, and OS (always Container-Optimized OS). Standard gives you control over machine types and node pool sizing, and lets you SSH into the underlying VM directly."
+        },
+        {
+          "term": "Best practice",
+          "text": "Deploy across multiple regions to protect availability if an Artifact Registry outage or regional issue disrupts cluster creation or upgrades in one location."
+        }
+      ]
     },
     {
       "id": "gke-loadbalancer",
@@ -172,15 +455,37 @@
       "images": [
         "LoadBalancer Services in GKE.png"
       ],
+      "source": "Google Cloud official documentation, \"About LoadBalancer Services\"",
       "bullets": [
-        "GKE LoadBalancer Services: creating a Kubernetes Service of type LoadBalancer causes GKE to provision a Google Cloud passthrough load balancer, either external (internet-facing, via a regional external passthrough Network Load Balancer) or internal (VPC-only, via an internal passthrough Network Load Balancer).",
-        "externalTrafficPolicy controls routing behavior: Local preserves the client's source IP and only sends traffic to nodes that actually have a ready serving Pod (needed for weighted load balancing); Cluster allows traffic to any node and may hop to a different node internally, which can add latency and loses the original client IP.",
-        "Weighted load balancing (external only): distributes new connections in proportion to how many ready Pods each node has, requires externalTrafficPolicy: Local and a supported GKE version.",
-        "Zonal affinity (internal only): prefers routing to node backends in the same zone as the client to reduce cross-zone traffic and cost, falling back to another zone if no healthy Pod exists locally.",
-        "GKE subsetting: for internal LoadBalancer Services, groups node endpoints into per-Service network endpoint groups (NEGs) instead of one shared instance group, which scales past the older 250-node backend limit. It's on by default in newer GKE versions and can't be turned off once enabled.",
-        "Health checks: which nodes pass depends on externalTrafficPolicy, under Cluster, any node with at least one serving Pod anywhere in the cluster passes; under Local, only nodes with a healthy, non-terminating Pod for that specific Service pass."
-      ],
-      "source": "Google Cloud official documentation, \"About LoadBalancer Services\""
+        {
+          "term": "What creating one does",
+          "text": "A Kubernetes Service of type LoadBalancer causes GKE to provision a Google Cloud passthrough load balancer, either external (internet-facing, via a regional external passthrough Network Load Balancer) or internal (VPC-only, via an internal passthrough Network Load Balancer)."
+        },
+        {
+          "term": "externalTrafficPolicy: the key setting",
+          "text": "",
+          "sub": [
+            "Local \u2014 preserves the client's source IP, only routes to nodes with a ready serving Pod. Required for weighted load balancing.",
+            "Cluster \u2014 allows traffic to any node, may hop internally to another node (adds latency), and loses the original client IP."
+          ]
+        },
+        {
+          "term": "Weighted load balancing",
+          "text": "External only. Distributes new connections in proportion to how many ready Pods each node has. Requires externalTrafficPolicy: Local and a supported GKE version."
+        },
+        {
+          "term": "Zonal affinity",
+          "text": "Internal only. Prefers routing to node backends in the same zone as the client, reducing cross-zone traffic and cost, falling back to another zone if no healthy Pod exists locally."
+        },
+        {
+          "term": "GKE subsetting",
+          "text": "For internal LoadBalancer Services, groups node endpoints into per-Service network endpoint groups (NEGs) instead of one shared instance group, scaling past the older 250-node backend limit. On by default in newer GKE versions, and can't be turned off once enabled."
+        },
+        {
+          "term": "Health check behavior",
+          "text": "Under Cluster policy, any node with at least one serving Pod anywhere in the cluster passes. Under Local policy, only nodes with a healthy, non-terminating Pod for that specific Service pass."
+        }
+      ]
     },
     {
       "id": "partitioned-tables",
@@ -189,15 +494,49 @@
       "images": [
         "Introduction to partitioned tables.png"
       ],
+      "source": "Google Cloud official documentation, \"Introduction to partitioned tables\" (BigQuery)",
       "bullets": [
-        "Partitioned tables: split a large BigQuery table into segments (partitions) based on a chosen column, so a query with a filter on that column can prune irrelevant partitions and scan less data, improving both performance and cost predictability.",
-        "When to partition: to scan only part of a table, to work around standard table quotas, to get an accurate cost estimate before running a query, or to use partition-level features like automatic expiration, writing to a single partition, or deleting a partition without a full table scan.",
-        "Three partitioning types: integer-range (buckets by numeric ranges you define), time-unit column (based on a DATE/TIMESTAMP/DATETIME column, with hourly/daily/monthly/yearly granularity), and ingestion-time (based on when BigQuery received the row, exposed via the _PARTITIONTIME pseudocolumn).",
-        "Choosing granularity: daily is the default and fits data spread across a wide date range; hourly suits high-volume data concentrated in a short window (under ~6 months); monthly or yearly suits a small amount of data per day spread across a very wide range, especially when rows across many dates get updated frequently.",
-        "Clustering vs partitioning: prefer clustering (or combine both) when you need finer-grained sorting than partitioning allows, when queries filter on multiple columns, when a column has high cardinality, or when partitioning would create too many very small partitions.",
-        "Partitioning beats old-style date-sharded tables (one table per day with a naming suffix), since sharding forces BigQuery to track separate schema/metadata per table and check permissions per table, which adds overhead partitioning avoids."
-      ],
-      "source": "Google Cloud official documentation, \"Introduction to partitioned tables\" (BigQuery)"
+        {
+          "term": "What partitioning does",
+          "text": "Splits a large table into segments based on a chosen column, so a query filtering on that column can prune irrelevant partitions and scan less data, improving both performance and cost predictability."
+        },
+        {
+          "term": "When to partition",
+          "text": "",
+          "sub": [
+            "To scan only part of a table instead of the whole thing",
+            "To work around standard table size/row quotas",
+            "To get an accurate cost estimate before running a query",
+            "To use partition-level features: automatic expiration, writing to a single partition, or deleting a partition without a full table scan"
+          ]
+        },
+        {
+          "term": "Three partitioning types",
+          "text": "",
+          "sub": [
+            "Integer-range \u2014 buckets by numeric ranges you define",
+            "Time-unit column \u2014 based on a DATE/TIMESTAMP/DATETIME column, hourly/daily/monthly/yearly granularity",
+            "Ingestion-time \u2014 based on when BigQuery received the row, exposed via the _PARTITIONTIME pseudocolumn"
+          ]
+        },
+        {
+          "term": "Choosing granularity",
+          "text": "",
+          "sub": [
+            "Daily (the default): fits data spread across a wide date range",
+            "Hourly: high-volume data concentrated in a short window (under ~6 months)",
+            "Monthly or yearly: a small amount of data per day spread across a very wide range, especially when rows across many dates get updated frequently"
+          ]
+        },
+        {
+          "term": "Clustering vs partitioning",
+          "text": "Prefer clustering (or combine both) when you need finer-grained sorting than partitioning allows, queries filter on multiple columns, a column has high cardinality, or partitioning would create too many tiny partitions."
+        },
+        {
+          "term": "Why not old-style date-sharded tables",
+          "text": "One table per day with a date-suffixed name forces BigQuery to track separate schema/metadata and check permissions per table, overhead that partitioning avoids entirely."
+        }
+      ]
     },
     {
       "id": "bigquery-views",
@@ -206,15 +545,58 @@
       "images": [
         "Five types of #U201cViews#U201d.png"
       ],
+      "source": "Medium, \"Hidden Gems of BigQuery \u2014 Part 4: Five types of Views\" by Artem Nikulchenko, May 2023",
       "bullets": [
-        "Logical Views: a saved SQL query that acts like a virtual table. Free to maintain (no storage cost) but every query against it re-runs and re-bills the full underlying SQL, so a view that looks cheap to a downstream user might actually scan a huge table each time.",
-        "Caching: BigQuery automatically caches identical repeated queries (roughly a 24-hour best-effort window), avoiding re-billing when the underlying data hasn't changed and the exact same query runs again. This happens by default with no setup, but you can't rely on it for guaranteed cost estimates.",
-        "Scheduled Queries: let you build your own controlled cache, a query runs on a schedule and writes its result into a real table, which downstream users then query directly instead of touching the original data. This adds storage and refresh cost but gives predictable, controlled expense versus relying on caching.",
-        "Materialized Views: a hybrid of caching and scheduled queries. Data is physically stored (so there's a storage/maintenance cost) but BigQuery automatically decides when to refresh (roughly within 5 minutes of a change, no more than every 30 minutes) and updates incrementally rather than recomputing from scratch, and queries against them always return current data even if a refresh hasn't happened yet, since BigQuery merges in the delta live.",
-        "Materialized views have real limits: a base table can be referenced by at most 20 materialized views, aggregates must be the outermost operation, outer joins and non-deterministic functions aren't supported, among others, so they don't fit every query shape.",
-        "Non-incremental materialized views: a newer, opt-in variant for query patterns that don't qualify for standard incremental materialized views, trading some of those restrictions for a different refresh model."
+        {
+          "term": "The common thread",
+          "text": "All five let you query pre-defined SQL without re-writing it, but they differ sharply in storage cost, freshness, and how much you control refresh timing."
+        },
+        {
+          "term": "Materialized view limits",
+          "text": "A base table can be referenced by at most 20 materialized views, aggregates must be the outermost operation, and outer joins plus non-deterministic functions aren't supported, so they don't fit every query shape."
+        }
       ],
-      "source": "Medium, \"Hidden Gems of BigQuery \u2014 Part 4: Five types of Views\" by Artem Nikulchenko, May 2023"
+      "table": {
+        "caption": "The five view types compared",
+        "headers": [
+          "Type",
+          "Storage cost",
+          "Freshness",
+          "How refresh works"
+        ],
+        "rows": [
+          [
+            "Logical View",
+            "None, it's just saved SQL",
+            "Always live",
+            "Re-runs the full underlying query every time, so it re-bills the full scan cost each query"
+          ],
+          [
+            "Cached query result",
+            "None (temporary)",
+            "~24hr best-effort window",
+            "Automatic, only for an identical repeated query on unchanged data, no setup, no cost guarantee"
+          ],
+          [
+            "Scheduled Query",
+            "Yes, writes a real table",
+            "As fresh as the last scheduled run",
+            "You control the schedule; downstream users query the resulting table directly"
+          ],
+          [
+            "Materialized View",
+            "Yes, physically stored",
+            "Refreshed automatically (~5 min after a change, at most every 30 min)",
+            "BigQuery decides when to refresh, updates incrementally, and merges in live deltas even between refreshes"
+          ],
+          [
+            "Non-incremental Materialized View",
+            "Yes",
+            "Similar to standard MV",
+            "A newer opt-in variant for query shapes that don't qualify for standard incremental materialized views"
+          ]
+        ]
+      }
     },
     {
       "id": "hierarchy-iam",
@@ -223,17 +605,56 @@
       "images": [
         "Hierarchy and IAM.png"
       ],
+      "source": "Medium, \"Getting started with GCP #1\" by Sarah, Mar 2024",
       "bullets": [
-        "Resource hierarchy: Organization sits at the top, then optional Folders (which can nest), then Projects, and finally individual resources. Every resource belongs to exactly one project, and every project can optionally sit under folders and ultimately an organization.",
-        "Projects have three identifiers: Project ID (permanent, globally unique, human-readable, used to reference the project in most contexts), Project Name (mutable, chosen by you, doesn't need to be unique), and Project Number (assigned automatically by GCP, immutable).",
-        "Folders let teams delegate administrative rights and organize projects by department or function, but folders require an Organization node to exist first.",
-        "The Organization node is the root of the hierarchy, created automatically once you set up a Cloud Identity or Google Workspace domain. It brings two notable roles by default, Organization Policy Administrator (broad control over policies) and Project Creator (fine-grained control over who can spin up new projects).",
-        "Policies are inherited downward: anything set at the Organization level applies to every folder and project beneath it, which is powerful but also risky if broad roles are granted too high in the hierarchy.",
-        "IAM answers who can do what on which resource: the who is a Google/Cloud Identity account, service account, or group; the what is an IAM role (a bundle of permissions); the where is any node in the resource hierarchy, with the resulting policy applying to that node and everything below it.",
-        "Three role types: primitive (Owner/Editor/Viewer/Billing Administrator, broad, project-wide, generally discouraged for production), predefined (Google-managed, scoped to a specific service, e.g., an instance-admin role for Bigtable), and custom (org- or project-level only, built to match a least-privilege model exactly).",
-        "Service accounts give non-human identities (like a VM or an application) their own credentials to interact with other GCP services, rather than relying on a real user's credentials."
-      ],
-      "source": "Medium, \"Getting started with GCP #1\" by Sarah, Mar 2024"
+        {
+          "term": "The hierarchy",
+          "text": "Organization at the top, then optional Folders (which can nest), then Projects, then individual resources. Every resource belongs to exactly one project."
+        },
+        {
+          "term": "Project identifiers",
+          "text": "",
+          "sub": [
+            "Project ID \u2014 permanent, globally unique, human-readable, used to reference the project almost everywhere",
+            "Project Name \u2014 mutable, chosen by you, doesn't need to be unique",
+            "Project Number \u2014 assigned automatically by GCP, immutable"
+          ]
+        },
+        {
+          "term": "Folders",
+          "text": "Let teams delegate administrative rights and organize projects by department or function. Folders require an Organization node to already exist."
+        },
+        {
+          "term": "The Organization node",
+          "text": "The root of the hierarchy, created automatically once you set up Cloud Identity or Google Workspace. Two notable default roles live here: Organization Policy Administrator (broad policy control) and Project Creator (controls who can spin up new projects)."
+        },
+        {
+          "term": "Inheritance",
+          "text": "Policies set at any level apply to everything beneath it. Powerful, but risky if a broad role gets granted too high up in the hierarchy."
+        },
+        {
+          "term": "IAM's core question",
+          "text": "Who can do what on which resource:",
+          "sub": [
+            "Who \u2014 a Google/Cloud Identity account, service account, or group",
+            "What \u2014 an IAM role (a bundle of permissions)",
+            "Where \u2014 any node in the resource hierarchy; the resulting policy applies there and everything below"
+          ]
+        },
+        {
+          "term": "Three role types",
+          "text": "",
+          "sub": [
+            "Primitive \u2014 Owner/Editor/Viewer/Billing Administrator, broad and project-wide, generally discouraged in production",
+            "Predefined \u2014 Google-managed, scoped to a specific service (e.g. an instance-admin role for Bigtable)",
+            "Custom \u2014 org- or project-level only, built to match a least-privilege model exactly"
+          ]
+        },
+        {
+          "term": "Service accounts",
+          "text": "Give non-human identities (a VM, an application) their own credentials to interact with other GCP services, rather than relying on a real user's credentials."
+        }
+      ]
     },
     {
       "id": "gcp-iam-deep",
@@ -243,15 +664,53 @@
         "What Is GCP IAM1.png",
         "What Is GCP IAM2.png"
       ],
+      "source": "usage.ai Blog, \"What Is GCP IAM? Roles, Policies & Best Practices\" by Debesh Singh",
       "bullets": [
-        "IAM enforces role-based access control: instead of granting permissions one by one, admins bind identities (users, groups, service accounts, or external federated identities) to roles that bundle related permissions together.",
-        "Because permissions inherit down the resource hierarchy (organization to folder to project to resource), a role granted at a high level quietly applies to everything underneath it, this is the single most common source of over-permissioned environments.",
-        "Access evaluation sequence: authenticate the identity, collect every IAM policy attached to the resource and its ancestors, aggregate all roles the identity holds, evaluate any IAM Conditions, then grant access if at least one binding allows it and no condition blocks it. IAM uses a union model, if any binding grants a permission, it's allowed, standard bindings don't support explicit deny.",
-        "IAM Conditions add context-aware restrictions on top of a role binding, such as an expiration timestamp, specific resource attributes, or request attributes, useful for temporary contractor access or timed production windows without having to manually revoke access later.",
-        "Service accounts are non-human identities used by workloads (a VM, a Cloud Run service, a CI/CD pipeline) to call GCP APIs. Long-lived downloaded JSON keys are a major risk if leaked; the safer pattern is short-lived credentials, Workload Identity Federation for external systems, or service account impersonation instead of sharing keys.",
-        "Best practices: enforce least privilege, avoid primitive roles in production, grant roles to groups rather than individual users, always double-check the hierarchy level before granting a role, regularly audit service accounts and remove unused ones, use IAM Conditions for anything temporary, and periodically review policies with tools like the IAM Recommender or Policy Analyzer."
-      ],
-      "source": "usage.ai Blog, \"What Is GCP IAM? Roles, Policies & Best Practices\" by Debesh Singh"
+        {
+          "term": "Role-based access control",
+          "text": "Instead of granting permissions one by one, admins bind identities (users, groups, service accounts, or external federated identities) to roles that bundle related permissions together."
+        },
+        {
+          "term": "The hidden risk",
+          "text": "Because permissions inherit down the resource hierarchy (organization \u2192 folder \u2192 project \u2192 resource), a role granted at a high level quietly applies to everything underneath it, the single most common source of over-permissioned environments."
+        },
+        {
+          "term": "How an access check actually runs",
+          "text": "",
+          "sub": [
+            "1. Authenticate the identity",
+            "2. Collect every IAM policy attached to the resource and its ancestors",
+            "3. Aggregate all roles the identity holds",
+            "4. Evaluate any IAM Conditions",
+            "5. Grant access if at least one binding allows it and no condition blocks it"
+          ]
+        },
+        {
+          "term": "IAM's union model",
+          "text": "If any binding grants a permission, it's allowed. Standard bindings don't support an explicit deny, only Conditions can restrict on top of a grant."
+        },
+        {
+          "term": "IAM Conditions",
+          "text": "Add context-aware restrictions on top of a role binding, an expiration timestamp, specific resource attributes, or request attributes. Useful for temporary contractor access or timed production windows without having to manually revoke access later."
+        },
+        {
+          "term": "Service account risk",
+          "text": "Long-lived downloaded JSON keys are a major risk if leaked. The safer pattern is short-lived credentials, Workload Identity Federation for external systems, or service account impersonation instead of sharing keys."
+        },
+        {
+          "term": "Best practices checklist",
+          "text": "",
+          "sub": [
+            "Enforce least privilege",
+            "Avoid primitive roles in production",
+            "Grant roles to groups rather than individual users",
+            "Double-check the hierarchy level before granting a role",
+            "Regularly audit service accounts and remove unused ones",
+            "Use IAM Conditions for anything temporary",
+            "Periodically review policies with the IAM Recommender or Policy Analyzer"
+          ]
+        }
+      ]
     },
     {
       "id": "iam-vs-acl",
@@ -260,14 +719,25 @@
       "images": [
         "Differences Between IAM and ACL.png"
       ],
+      "source": "Medium, \"Differences Between IAM and ACL in GCP\" by Forever O., Oct 2024",
       "bullets": [
-        "IAM manages access broadly and centrally: it defines roles and permissions across an entire organization or set of services, letting administrators control access from one place using role-based access control.",
-        "ACLs manage access narrowly: they're attached directly to an individual resource (a file, a Cloud Storage object, a network port) and specify exactly which users or systems can do what to that one object.",
-        "Scope: IAM operates at the level of a whole platform, service, or many resources at once; ACLs operate object-by-object, which gives fine detail but doesn't scale well if you have to configure permissions resource-by-resource.",
-        "Practical guidance: use IAM as the default, broad access-control layer across an organization or cloud environment, and reserve ACLs for the rare cases where a specific individual object needs a permission that differs from the IAM-level default.",
-        "In Google Cloud Storage specifically, IAM plus Uniform Bucket-Level Access is the recommended modern approach; ACLs are considered legacy and harder to audit at scale."
-      ],
-      "source": "Medium, \"Differences Between IAM and ACL in GCP\" by Forever O., Oct 2024"
+        {
+          "term": "IAM",
+          "text": "Manages access broadly and centrally, defines roles and permissions across an entire organization or set of services, letting admins control access from one place using role-based access control."
+        },
+        {
+          "term": "ACL",
+          "text": "Manages access narrowly, attached directly to an individual resource (a file, a Cloud Storage object, a network port), specifying exactly which users or systems can do what to that one object."
+        },
+        {
+          "term": "Scope difference",
+          "text": "IAM operates at the level of a whole platform, service, or many resources at once. ACLs operate object-by-object, fine-grained but doesn't scale well if you have to configure permissions resource-by-resource."
+        },
+        {
+          "term": "Practical guidance",
+          "text": "Use IAM as the default, broad access-control layer across an organization or environment, and reserve ACLs for the rare case where one specific object needs a permission that differs from the IAM-level default. In Cloud Storage specifically, IAM plus Uniform Bucket-Level Access is the recommended modern approach; ACLs are legacy and harder to audit at scale."
+        }
+      ]
     },
     {
       "id": "data-security",
@@ -276,16 +746,62 @@
       "images": [
         "Data security in Google Cloud.png"
       ],
+      "source": "Google Cloud Blog, \"Data security in Google Cloud\" by Priyanka Vergadia, Jul 2022",
       "bullets": [
-        "Encryption at rest by default: Google encrypts data before writing it to disk. Data is chunked, each chunk gets its own data encryption key, and each of those keys is itself wrapped by a key encryption key. Updated chunks get fresh keys rather than reusing old ones, so compromising one key or gaining physical disk access alone isn't enough to read customer data.",
-        "Encryption in transit by default: all traffic to Google Cloud over the internet requires a properly terminated TLS connection, protecting data as it moves between your systems and Google's, or between two Google services.",
-        "Encryption in use (Confidential Computing): Confidential VMs and Confidential GKE Nodes encrypt data even while it's being actively processed in memory, using hardware-based memory encryption where Google itself doesn't have access to the key. This builds on top of Shielded VM protections against rootkits/bootkits.",
-        "Customer-Supplied Encryption Keys (CSEK): for the lowest-trust model, you supply your own key at the time of use via API; Google never stores it beyond the operation, but that also means Google can't recover your data if you lose the key, so you take on the responsibility of key distribution and durability.",
-        "Cloud KMS: a managed key-management service where you keep control over key operations and audit logging, without having to build your own key-distribution system, your keys effectively replace Google's default encryption keys.",
-        "Cloud HSM: like Cloud KMS but keys live in a dedicated, FIPS 140-2 Level 3 certified hardware security module cluster that Google manages for you (patching, scaling) while you keep control of the keys themselves.",
-        "Cloud EKM: lets you keep the actual key material in a supported external key-management partner system outside Google entirely; Google Cloud only holds a reference (URI) to that external key, and the external key is never exposed to Google."
+        {
+          "term": "Encryption at rest (default)",
+          "text": "Google encrypts data before writing it to disk. Data is chunked, each chunk gets its own data encryption key, and each key is wrapped by a key encryption key. Updated chunks get fresh keys rather than reusing old ones, so compromising one key or gaining physical disk access alone isn't enough to read customer data."
+        },
+        {
+          "term": "Encryption in transit (default)",
+          "text": "All traffic to Google Cloud over the internet requires a properly terminated TLS connection, protecting data moving between your systems and Google's, or between two Google services."
+        },
+        {
+          "term": "Encryption in use",
+          "text": "Confidential VMs and Confidential GKE Nodes encrypt data even while it's actively being processed in memory, using hardware-based memory encryption where Google itself doesn't have access to the key. Builds on top of Shielded VM protections against rootkits/bootkits."
+        }
       ],
-      "source": "Google Cloud Blog, \"Data security in Google Cloud\" by Priyanka Vergadia, Jul 2022"
+      "table": {
+        "caption": "Key management options, from most to least Google-managed",
+        "headers": [
+          "Option",
+          "Where keys live",
+          "You control",
+          "Fit for"
+        ],
+        "rows": [
+          [
+            "Google default encryption",
+            "Google-managed",
+            "Nothing extra",
+            "Default, zero setup"
+          ],
+          [
+            "Cloud KMS",
+            "Google-managed service, you hold the reference",
+            "Key operations, rotation, audit logging",
+            "Teams that want control without building key infrastructure"
+          ],
+          [
+            "Cloud HSM",
+            "Dedicated FIPS 140-2 Level 3 hardware Google manages",
+            "The keys themselves",
+            "Compliance needs requiring certified hardware"
+          ],
+          [
+            "Cloud EKM",
+            "An external key-management partner, outside Google entirely",
+            "Full custody, Google only holds a URI reference",
+            "Strictest trust requirements, key material never touches Google"
+          ],
+          [
+            "Customer-Supplied Keys (CSEK)",
+            "You supply per API call",
+            "Everything, including durability",
+            "Lowest-trust model; Google never stores it, but can't recover your data if you lose it"
+          ]
+        ]
+      }
     },
     {
       "id": "observability",
@@ -294,15 +810,54 @@
       "images": [
         "Observability on Google Cloud.png"
       ],
+      "source": "Google Cloud Blog, \"Implementing observability for always-on Ecommerce experience\" by Vikas Saini & Logan Vadivelu, Sep 2022",
       "bullets": [
-        "Logging vs Monitoring: logging captures raw event data from an application and its infrastructure; monitoring turns that (and other telemetry) into actionable insight, dashboards, alerts, and trend analysis.",
-        "Cloud Operations Suite components: Cloud Logging (collects logs from 150+ sources, supports search/alerting), Cloud Monitoring (metrics dashboards and a query language for spotting patterns), Error Reporting (groups and deduplicates errors by stack trace), Cloud Trace (distributed latency tracing), Cloud Profiler (continuous CPU/memory profiling in production).",
-        "Cloud Debugger has been deprecated; the open-source Snapshot Debugger is a suggested replacement for inspecting a running app's state without stopping it.",
-        "Log categories: Google Cloud platform logs (service-level activity), user-written logs (sent via agent, API, or client library), component logs (a hybrid with a different entry structure), and security logs (Cloud Audit Logs and Access Transparency).",
-        "Log routing: entries flow through the Log Router, which uses sinks to send some or all logs to Cloud Storage, BigQuery, Pub/Sub, or dedicated log buckets, filtered by inclusion/exclusion rules, and from there can feed a SIEM/SOAR system for security analysis.",
-        "Best practices: keep Data Access audit logs enabled for sensitive environments, enable network-level logging (VPC Flow, firewall, DNS) for security visibility, centralize logs into one project for easier review and tighter access control, set retention periods based on compliance needs, tier alerts by priority so teams aren't drowning in noise, and budget for the ongoing cost of storing and querying log data."
-      ],
-      "source": "Google Cloud Blog, \"Implementing observability for always-on Ecommerce experience\" by Vikas Saini & Logan Vadivelu, Sep 2022"
+        {
+          "term": "Logging vs Monitoring",
+          "text": "Logging captures raw event data from an application and its infrastructure. Monitoring turns that (and other telemetry) into actionable insight, dashboards, alerts, and trend analysis."
+        },
+        {
+          "term": "Cloud Operations Suite components",
+          "text": "",
+          "sub": [
+            "Cloud Logging \u2014 collects logs from 150+ sources, supports search and alerting",
+            "Cloud Monitoring \u2014 metrics dashboards and a query language for spotting patterns",
+            "Error Reporting \u2014 groups and deduplicates errors by stack trace",
+            "Cloud Trace \u2014 distributed latency tracing across services",
+            "Cloud Profiler \u2014 continuous CPU/memory profiling in production"
+          ]
+        },
+        {
+          "term": "Note on Cloud Debugger",
+          "text": "Deprecated; the open-source Snapshot Debugger is the suggested replacement for inspecting a running app's state without stopping it."
+        },
+        {
+          "term": "Log categories",
+          "text": "",
+          "sub": [
+            "Platform logs \u2014 service-level activity from Google Cloud itself",
+            "User-written logs \u2014 sent via agent, API, or client library",
+            "Component logs \u2014 a hybrid, with a different entry structure",
+            "Security logs \u2014 Cloud Audit Logs and Access Transparency"
+          ]
+        },
+        {
+          "term": "Log routing",
+          "text": "Entries flow through the Log Router, which uses sinks to send some or all logs to Cloud Storage, BigQuery, Pub/Sub, or dedicated log buckets, filtered by inclusion/exclusion rules, and from there can feed a SIEM/SOAR system for security analysis."
+        },
+        {
+          "term": "Best practices",
+          "text": "",
+          "sub": [
+            "Keep Data Access audit logs enabled for sensitive environments",
+            "Enable network-level logging (VPC Flow, firewall, DNS) for security visibility",
+            "Centralize logs into one project for easier review and tighter access control",
+            "Set retention periods based on compliance needs",
+            "Tier alerts by priority so teams aren't drowning in noise",
+            "Budget for the ongoing cost of storing and querying log data"
+          ]
+        }
+      ]
     },
     {
       "id": "cicd",
@@ -311,16 +866,44 @@
       "images": [
         "DevOps and CI_CD.png"
       ],
+      "source": "Google Cloud Blog, \"DevOps and CI/CD on Google Cloud explained\" by Priyanka Vergadia, Dec 2021",
       "bullets": [
-        "CI (Continuous Integration): integrate code changes frequently (multiple times a day) rather than in one big batch, with every integration verified by an automated build, so problems surface early instead of compounding downstream.",
-        "CD (Continuous Delivery): extends CI by packaging and preparing software for release; strategies like blue/green or canary deployments reduce release risk and let developers stop hand-tuning deployment scripts.",
-        "Why it matters more now: apps are shifting to hybrid/multi-cloud, monoliths are splitting into microservices with different languages and lifecycles, and workloads are moving to serverless/containers/Kubernetes, all of which make manual, ad hoc deployment far riskier than before.",
-        "A solid CI/CD pipeline should trigger automatically on check-in and handle: packaging source code, automated unit/integration tests, consistent build environments, required approvals before production, and blue/green or canary rollouts.",
-        "Cloud Build: a fully managed CI/CD platform that imports source from Cloud Storage, Cloud Source Repositories, GitHub, or Bitbucket, runs each build step in its own container, and can produce artifacts like container images. It integrates with Binary Authorization for security scanning so only trusted images reach production, and offers private pools for enterprise network/security requirements.",
-        "Cloud Code: IDE tooling for writing, running, and debugging cloud-native apps, which then hands off to Cloud Build for the actual build, packages into Artifact Registry, and deploys to GKE or Cloud Run.",
-        "Cloud Deploy: a managed, opinionated continuous-delivery service focused on making GKE deployments easier and more reliable, with built-in security controls that plug into an existing DevOps toolchain."
-      ],
-      "source": "Google Cloud Blog, \"DevOps and CI/CD on Google Cloud explained\" by Priyanka Vergadia, Dec 2021"
+        {
+          "term": "CI (Continuous Integration)",
+          "text": "Integrate code changes frequently (multiple times a day) rather than in one big batch, with every integration verified by an automated build, so problems surface early instead of compounding downstream."
+        },
+        {
+          "term": "CD (Continuous Delivery)",
+          "text": "Extends CI by packaging and preparing software for release. Strategies like blue/green or canary deployments reduce release risk and remove the need to hand-tune deployment scripts."
+        },
+        {
+          "term": "Why it matters more now",
+          "text": "Apps are shifting to hybrid/multi-cloud, monoliths are splitting into microservices with different languages and lifecycles, and workloads are moving to serverless/containers/Kubernetes, all of which make manual, ad hoc deployment far riskier than before."
+        },
+        {
+          "term": "What a solid pipeline should trigger automatically",
+          "text": "",
+          "sub": [
+            "Packaging source code",
+            "Automated unit and integration tests",
+            "Consistent build environments",
+            "Required approvals before production",
+            "Blue/green or canary rollouts"
+          ]
+        },
+        {
+          "term": "Cloud Build",
+          "text": "A fully managed CI/CD platform that imports source from Cloud Storage, Cloud Source Repositories, GitHub, or Bitbucket, runs each build step in its own container, and can produce artifacts like container images. Integrates with Binary Authorization so only trusted images reach production, and offers private pools for enterprise network/security requirements."
+        },
+        {
+          "term": "Cloud Code",
+          "text": "IDE tooling for writing, running, and debugging cloud-native apps, which then hands off to Cloud Build for the actual build, packages into Artifact Registry, and deploys to GKE or Cloud Run."
+        },
+        {
+          "term": "Cloud Deploy",
+          "text": "A managed, opinionated continuous-delivery service focused on making GKE deployments easier and more reliable, with built-in security controls that plug into an existing DevOps toolchain."
+        }
+      ]
     },
     {
       "id": "etl-cloud-run",
@@ -329,15 +912,39 @@
       "images": [
         "ETL Process to Cloud Run.png"
       ],
+      "source": "Medium, \"Cloud-Native Advantages of Moving Your ETL Process to Cloud Run\" by Averi Kitsch, Dec 2019",
       "bullets": [
-        "The idea: not every ETL workload justifies the complexity of Dataflow or Composer. If your logic is a modest SQL/shell/Python script and data volume isn't huge, running it as a container on Cloud Run keeps things simple while still gaining cloud-native benefits.",
-        "Advantages of moving ETL to Cloud Run: pay-per-use billing (charged only while processing, to the nearest 100ms), automatic scaling (including down to zero), no infrastructure to manage, and built-in retry/fault tolerance.",
-        "Cloud Pub/Sub acts as the glue between services, standardizing how events/data move between producers and consumers, supporting fan-in/fan-out patterns, and retrying delivery for up to 7 days if a subscriber is briefly down.",
-        "Cloud Tasks is an alternative to Pub/Sub when you specifically need rate limiting, deduplication, configurable retries, or scheduled dispatch, useful for controlling how fast data gets processed downstream.",
-        "Streaming architecture: since Cloud Run doesn't support long-lived streaming protocols natively, a common pattern is Pub/Sub push notifications triggering a Cloud Run service per event (e.g., processing an uploaded image the moment Cloud Storage emits a notification).",
-        "Batch architecture: Cloud Scheduler kicks off a nightly Cloud Run job, which reads data (e.g., files from Cloud Storage), fans work out via Cloud Tasks, and a second Cloud Run service processes each task, be mindful that Cloud Run has a maximum request timeout (15 minutes, default 5), so long batch jobs need to be chunked."
-      ],
-      "source": "Medium, \"Cloud-Native Advantages of Moving Your ETL Process to Cloud Run\" by Averi Kitsch, Dec 2019"
+        {
+          "term": "The idea",
+          "text": "Not every ETL workload justifies the complexity of Dataflow or Composer. If your logic is a modest SQL/shell/Python script and data volume isn't huge, running it as a container on Cloud Run keeps things simple while still gaining cloud-native benefits."
+        },
+        {
+          "term": "Why move ETL to Cloud Run",
+          "text": "",
+          "sub": [
+            "Pay-per-use billing, charged only while processing, to the nearest 100ms",
+            "Automatic scaling, including down to zero",
+            "No infrastructure to manage",
+            "Built-in retry/fault tolerance"
+          ]
+        },
+        {
+          "term": "Cloud Pub/Sub as the glue",
+          "text": "Standardizes how events/data move between producers and consumers, supports fan-in/fan-out patterns, and retries delivery for up to 7 days if a subscriber is briefly down."
+        },
+        {
+          "term": "Cloud Tasks as an alternative",
+          "text": "Use instead of Pub/Sub when you specifically need rate limiting, deduplication, configurable retries, or scheduled dispatch, useful for controlling how fast data gets processed downstream."
+        },
+        {
+          "term": "Streaming architecture pattern",
+          "text": "Since Cloud Run doesn't support long-lived streaming protocols natively, a common pattern is Pub/Sub push notifications triggering a Cloud Run service per event, e.g. processing an uploaded image the moment Cloud Storage emits a notification."
+        },
+        {
+          "term": "Batch architecture pattern",
+          "text": "Cloud Scheduler kicks off a nightly Cloud Run job, which reads data (e.g. files from Cloud Storage), fans work out via Cloud Tasks, and a second Cloud Run service processes each task. Watch out: Cloud Run has a maximum request timeout (15 minutes, default 5), so long batch jobs need to be chunked."
+        }
+      ]
     },
     {
       "id": "data-transfer",
@@ -346,14 +953,42 @@
       "images": [
         "How to transfer your data to Google Cloud.png"
       ],
+      "source": "Google Cloud Blog, \"How to transfer your data to Google Cloud\" by Priyanka Vergadia, Apr 2021",
       "bullets": [
-        "Four main transfer paths, chosen based on data size, available bandwidth, and whether the transfer is one-time or recurring.",
-        "Cloud Storage transfer tools (Console UI, JSON API, gsutil): best for smaller transfers up to a few TB, run directly from your own machine or scripts; gsutil supports multi-threaded rsync-style and streaming transfers.",
-        "Storage Transfer Service: a managed service for moving data into Cloud Storage from other clouds, on-premises sources, or between buckets, with scheduling, retries, and detailed logging, better suited to recurring or larger jobs than gsutil.",
-        "Transfer Appliance: a physical device (available in ~40TB and ~300TB sizes) you load with data and ship to Google, ideal when bandwidth is too limited to move a very large dataset online in a reasonable time (illustratively, moving a petabyte over a typical 100 Mbps line could take years, versus about 40 days with an appliance).",
-        "BigQuery Data Transfer Service: automates scheduled data loads directly into BigQuery from SaaS apps, other cloud storage providers, and warehouses like Teradata or Redshift, letting an analytics team stand up a warehouse without writing custom ingestion code."
+        {
+          "term": "Choosing a method",
+          "text": "Picked based on data size, available bandwidth, and whether the transfer is one-time or recurring."
+        },
+        {
+          "term": "Why a physical appliance can beat the network",
+          "text": "Illustratively, moving a petabyte over a typical 100 Mbps line could take years, versus about 40 days with an appliance, bandwidth math matters at that scale."
+        }
       ],
-      "source": "Google Cloud Blog, \"How to transfer your data to Google Cloud\" by Priyanka Vergadia, Apr 2021"
+      "table": {
+        "caption": "Four transfer paths",
+        "headers": [
+          "Method",
+          "Best for"
+        ],
+        "rows": [
+          [
+            "Cloud Storage tools (Console, JSON API, gsutil)",
+            "Smaller transfers up to a few TB, run directly from your own machine or scripts; gsutil supports multi-threaded rsync-style and streaming transfers"
+          ],
+          [
+            "Storage Transfer Service",
+            "Recurring or larger jobs into Cloud Storage from other clouds, on-prem, or between buckets, with scheduling, retries, and logging"
+          ],
+          [
+            "Transfer Appliance",
+            "Very large datasets where bandwidth is the bottleneck; a physical device (~40TB or ~300TB) you load and ship to Google"
+          ],
+          [
+            "BigQuery Data Transfer Service",
+            "Automated scheduled loads directly into BigQuery from SaaS apps, other cloud storage, or warehouses like Teradata/Redshift"
+          ]
+        ]
+      }
     },
     {
       "id": "datastream-dataflow",
@@ -362,14 +997,35 @@
       "images": [
         "Implement Datastream and Dataflow.png"
       ],
+      "source": "Google Cloud official documentation, \"Implement Datastream and Dataflow for analytics\"",
       "bullets": [
-        "Datastream streams change data (inserts, updates, deletes) from Oracle, MySQL, or PostgreSQL sources directly toward BigQuery, using change data capture (CDC) so you get near real-time visibility instead of slow, periodic batch exports.",
-        "When you need more control than a direct Datastream-to-BigQuery path offers, for example custom transformation logic or manually defining logical primary keys, you route Datastream's output through Dataflow instead.",
-        "A common pattern: Datastream writes change files into a Cloud Storage bucket, the bucket sends Pub/Sub notifications about new files, and a Dataflow job (triggered by those notifications) processes the files and merges the changes into BigQuery tables.",
-        "This setup needs several pieces wired together: a destination Cloud Storage bucket, Pub/Sub notifications enabled on that bucket, one or more BigQuery datasets (often a staging/log dataset plus a final merged dataset), Datastream connection profiles for the source database and destination, and a running stream plus a Dataflow job to consume it.",
-        "Networking: the source database needs a firewall rule allowing Datastream's public IP ranges (or a private connectivity method), and CDC has to be explicitly configured on the source database before Datastream can capture changes."
-      ],
-      "source": "Google Cloud official documentation, \"Implement Datastream and Dataflow for analytics\""
+        {
+          "term": "What Datastream does",
+          "text": "Streams change data (inserts, updates, deletes) from Oracle, MySQL, or PostgreSQL sources directly toward BigQuery, using change data capture (CDC) so you get near real-time visibility instead of slow, periodic batch exports."
+        },
+        {
+          "term": "When to add Dataflow into the mix",
+          "text": "When you need more control than a direct Datastream-to-BigQuery path offers, custom transformation logic, or manually defining logical primary keys."
+        },
+        {
+          "term": "The common pattern",
+          "text": "",
+          "sub": [
+            "1. Datastream writes change files into a Cloud Storage bucket",
+            "2. The bucket sends Pub/Sub notifications about new files",
+            "3. A Dataflow job (triggered by those notifications) processes the files",
+            "4. Dataflow merges the changes into BigQuery tables"
+          ]
+        },
+        {
+          "term": "Pieces you need to wire together",
+          "text": "A destination Cloud Storage bucket, Pub/Sub notifications enabled on that bucket, one or more BigQuery datasets (often a staging/log dataset plus a final merged dataset), Datastream connection profiles for source and destination, and a running stream plus Dataflow job to consume it."
+        },
+        {
+          "term": "Networking prerequisite",
+          "text": "The source database needs a firewall rule allowing Datastream's public IP ranges (or a private connectivity method), and CDC must be explicitly configured on the source database before Datastream can capture changes."
+        }
+      ]
     },
     {
       "id": "dataproc",
@@ -378,16 +1034,42 @@
       "images": [
         "Google Cloud Dataproc.png"
       ],
+      "source": "\"Demystifying Google Cloud Dataproc in 2025: The Practical Guide\" (vendor blog)",
       "bullets": [
-        "Dataproc is Google's managed service for open-source big data frameworks, Spark, Hadoop, Flink, and Presto, removing the manual work of provisioning, configuring, and patching clusters yourself.",
-        "Key architectural difference from on-prem Hadoop: Dataproc decouples compute from storage by using Cloud Storage instead of HDFS, so clusters can be spun up per job and deleted afterward without losing data, this is what makes Dataproc clusters practical to treat as disposable/ephemeral.",
-        "Cluster components: a master node (runs the Spark driver or YARN ResourceManager, HDFS NameNode, job history), worker nodes (run NodeManager, HDFS DataNode, Spark executors), and optional secondary/preemptible workers for cheaper, interruptible capacity.",
-        "Autoscaling compares pending memory requested by jobs against available memory, scaling workers up or down accordingly; it doesn't support Spark Structured Streaming and can't scale all the way to zero (at least one node always remains).",
-        "Dataproc Serverless removes cluster management entirely, you submit a Spark batch job and the service provisions and tears down the execution environment automatically. It trades some customization and faster iteration for zero idle-VM cost, priced by Data Compute Units (DCU) rather than provisioned vCPUs.",
-        "Dataproc vs Dataflow: choose Dataproc when you're running existing Spark/Hadoop/Hive code with minimal changes and want direct control over cluster configuration; choose Dataflow when building new Apache Beam pipelines that need autoscaling and dynamic load balancing, especially for continuous streaming or complex windowed transformations.",
-        "Pricing (Compute Engine-based clusters): roughly $0.01 per vCPU-hour across all nodes in the cluster, billed per second with a one-minute minimum, on top of the underlying Compute Engine/disk/network charges."
-      ],
-      "source": "\"Demystifying Google Cloud Dataproc in 2025: The Practical Guide\" (vendor blog)"
+        {
+          "term": "What it is",
+          "text": "Google's managed service for open-source big data frameworks, Spark, Hadoop, Flink, and Presto, removing the manual work of provisioning, configuring, and patching clusters yourself."
+        },
+        {
+          "term": "The key architectural difference from on-prem Hadoop",
+          "text": "Dataproc decouples compute from storage by using Cloud Storage instead of HDFS, so clusters can be spun up per job and deleted afterward without losing data. This is what makes Dataproc clusters practical to treat as disposable/ephemeral."
+        },
+        {
+          "term": "Cluster components",
+          "text": "",
+          "sub": [
+            "Master node \u2014 runs the Spark driver or YARN ResourceManager, HDFS NameNode, job history",
+            "Worker nodes \u2014 run NodeManager, HDFS DataNode, Spark executors",
+            "Secondary/preemptible workers (optional) \u2014 cheaper, interruptible extra capacity"
+          ]
+        },
+        {
+          "term": "Autoscaling",
+          "text": "Compares pending memory requested by jobs against available memory, scaling workers up or down accordingly. It doesn't support Spark Structured Streaming and can't scale all the way to zero, at least one node always remains."
+        },
+        {
+          "term": "Dataproc Serverless",
+          "text": "Removes cluster management entirely, you submit a Spark batch job and the service provisions and tears down the execution environment automatically. Trades some customization and iteration speed for zero idle-VM cost, priced by Data Compute Units (DCU) instead of provisioned vCPUs."
+        },
+        {
+          "term": "Dataproc vs Dataflow, in one line",
+          "text": "Choose Dataproc for existing Spark/Hadoop/Hive code with minimal changes and direct control over cluster config. Choose Dataflow for new Apache Beam pipelines that need autoscaling and dynamic load balancing, especially continuous streaming or complex windowed transforms."
+        },
+        {
+          "term": "Pricing (Compute Engine-based clusters)",
+          "text": "Roughly $0.01 per vCPU-hour across all nodes in the cluster, billed per second with a one-minute minimum, on top of the underlying Compute Engine/disk/network charges."
+        }
+      ]
     },
     {
       "id": "data-pipeline-overview",
@@ -396,16 +1078,51 @@
       "images": [
         "The GCP Data Pipeline.png"
       ],
+      "source": "Medium, \"The GCP Data Pipeline: From Raw Ingestion to Business Intelligence\" by Antonella Blasetti, Nov 2025",
       "bullets": [
-        "Two ingestion modes into BigQuery: batch (collect data over a period, then load it all at once, e.g., via a Cloud Storage load job or the BigQuery Data Transfer Service) and streaming (write data event-by-event as it's generated, for cases needing near-immediate analysis).",
-        "Cost note: loading batch data into BigQuery is free; streaming inserts are not, which is a real factor when deciding which ingestion mode fits a given data source.",
-        "Legacy/on-prem databases typically need a change data capture (CDC) tool watching the transaction log, streaming those changes into Pub/Sub as events, since you generally can't connect a legacy database directly for real-time streaming.",
-        "Simple Pub/Sub-to-BigQuery subscriptions can push messages straight into a table with no code, for cases with no transformation need; add Dataflow when you need to join, cleanse, or aggregate data before it lands in BigQuery. Pub/Sub Single Message Transforms offer a lighter-weight, code-free option for simple per-message validation/filtering, routing anything that can't be fixed to a dead-letter topic.",
-        "A notable architectural shift: modern pipelines often send streaming data straight into BigQuery first, bypassing the traditional pattern of writing to an operational database and waiting for a nightly ETL job, which turns hours of latency into seconds.",
-        "No-ingestion options exist for querying data without moving it: federated queries hit live operational databases (Cloud SQL, Spanner, AlloyDB) directly, provided they're in the same location as the BigQuery dataset; external tables (BigQuery Omni) query files sitting in GCS, S3, or Azure Blob Storage as if they were native tables; BigLake extends this further by letting you apply BigQuery's row- and column-level security policies onto those external files, unifying a data lake and a warehouse under one security model.",
-        "BigQuery also has first-class support for semi-structured JSON data via STRUCT and ARRAY columns, it isn't limited to strictly tabular relational data."
-      ],
-      "source": "Medium, \"The GCP Data Pipeline: From Raw Ingestion to Business Intelligence\" by Antonella Blasetti, Nov 2025"
+        {
+          "term": "Two ingestion modes into BigQuery",
+          "text": "",
+          "sub": [
+            "Batch \u2014 collect data over a period, then load it all at once (e.g. a Cloud Storage load job or the BigQuery Data Transfer Service)",
+            "Streaming \u2014 write data event-by-event as it's generated, for near-immediate analysis"
+          ]
+        },
+        {
+          "term": "Cost note",
+          "text": "Loading batch data into BigQuery is free; streaming inserts are not, a real factor when deciding which ingestion mode fits a given source."
+        },
+        {
+          "term": "Legacy databases need an extra step",
+          "text": "You generally can't connect a legacy on-prem database directly for real-time streaming, a change data capture (CDC) tool watching the transaction log is needed, streaming those changes into Pub/Sub as events."
+        },
+        {
+          "term": "How much processing you need before landing in BigQuery",
+          "text": "",
+          "sub": [
+            "No transformation needed \u2192 simple Pub/Sub-to-BigQuery subscription pushes messages straight into a table with no code",
+            "Light per-message validation/filtering \u2192 Pub/Sub Single Message Transforms, a lighter-weight, code-free option, routes anything unfixable to a dead-letter topic",
+            "Join, cleanse, or aggregate before landing \u2192 add Dataflow into the pipeline"
+          ]
+        },
+        {
+          "term": "A notable architectural shift",
+          "text": "Modern pipelines often send streaming data straight into BigQuery first, bypassing the traditional pattern of writing to an operational database and waiting for a nightly ETL job, turning hours of latency into seconds."
+        },
+        {
+          "term": "No-ingestion options (query without moving data)",
+          "text": "",
+          "sub": [
+            "Federated queries \u2014 hit live operational databases (Cloud SQL, Spanner, AlloyDB) directly, provided they're in the same location as the BigQuery dataset",
+            "External tables (BigQuery Omni) \u2014 query files sitting in GCS, S3, or Azure Blob Storage as if they were native tables",
+            "BigLake \u2014 extends this further, letting you apply BigQuery's row- and column-level security onto those external files, unifying a data lake and a warehouse under one security model"
+          ]
+        },
+        {
+          "term": "Semi-structured data support",
+          "text": "BigQuery has first-class support for JSON-shaped data via STRUCT and ARRAY columns, it isn't limited to strictly tabular relational data."
+        }
+      ]
     },
     {
       "id": "dataplex",
@@ -414,14 +1131,52 @@
       "images": [
         "Google Cloud Dataplex.png"
       ],
+      "source": "InfoWorld, \"Preview: Google Cloud Dataplex wows\" by Martin Heller, Apr 2023",
       "bullets": [
-        "Dataplex is a data management and governance layer that unifies, discovers, and classifies data across storage systems without requiring you to physically move or duplicate it, it works by harvesting and centralizing metadata.",
-        "Core features: automatic data discovery and classification across structured, semi-structured, and unstructured sources with a unified searchable catalog; logical organization of data into domains via lakes and zones; centralized security/governance and auditing across otherwise siloed data; built-in data quality checks and automatic data lineage; and a serverless exploration workbench (Spark SQL, Jupyter notebooks) for querying governed data directly.",
-        "Two common usage patterns: a domain-centric data mesh, where each business domain owns a Dataplex lake and controls its own data, and data tiering, where a raw zone (accessible to engineers) feeds a curated zone (accessible to analysts and data scientists) as data matures.",
-        "Typical process flow: raw CSV/JSON lands in Cloud Storage, discovery extracts schema and does light curation into queryable Parquet/Avro/ORC using Dataflow and Spark, Spark SQL then transforms and secures the data into BigQuery with access-controlled views, and a final step produces business-ready data products.",
-        "Governance features: the Attribute Store lets you build taxonomies and attach policy attributes to tables or columns; automatic data profiling reveals statistical characteristics per column; DLP-style classification helps flag and mask sensitive data like PII; and data quality scans auto-recommend rules for issues like nulls, duplicate IDs, or out-of-range values, based on the profiled data."
-      ],
-      "source": "InfoWorld, \"Preview: Google Cloud Dataplex wows\" by Martin Heller, Apr 2023"
+        {
+          "term": "What it is",
+          "text": "A data management and governance layer that unifies, discovers, and classifies data across storage systems without requiring you to physically move or duplicate it, working by harvesting and centralizing metadata."
+        },
+        {
+          "term": "Core features",
+          "text": "",
+          "sub": [
+            "Automatic data discovery and classification across structured, semi-structured, and unstructured sources with a unified searchable catalog",
+            "Logical organization of data into domains via lakes and zones",
+            "Centralized security/governance and auditing across otherwise siloed data",
+            "Built-in data quality checks and automatic data lineage",
+            "A serverless exploration workbench (Spark SQL, Jupyter notebooks) for querying governed data directly"
+          ]
+        },
+        {
+          "term": "Two common usage patterns",
+          "text": "",
+          "sub": [
+            "Domain-centric data mesh \u2014 each business domain owns a Dataplex lake and controls its own data",
+            "Data tiering \u2014 a raw zone (accessible to engineers) feeds a curated zone (accessible to analysts and data scientists) as data matures"
+          ]
+        },
+        {
+          "term": "Typical process flow",
+          "text": "",
+          "sub": [
+            "1. Raw CSV/JSON lands in Cloud Storage",
+            "2. Discovery extracts schema and does light curation into queryable Parquet/Avro/ORC using Dataflow and Spark",
+            "3. Spark SQL transforms and secures the data into BigQuery with access-controlled views",
+            "4. Business-ready data products come out the other end"
+          ]
+        },
+        {
+          "term": "Governance features",
+          "text": "",
+          "sub": [
+            "Attribute Store \u2014 build taxonomies and attach policy attributes to tables or columns",
+            "Automatic data profiling \u2014 reveals statistical characteristics per column",
+            "Sensitive-data classification \u2014 DLP-style detection helps flag and mask PII",
+            "Data quality scans \u2014 auto-recommend rules for nulls, duplicate IDs, or out-of-range values based on the profiled data"
+          ]
+        }
+      ]
     },
     {
       "id": "analytics-hub",
@@ -430,15 +1185,50 @@
       "images": [
         "Analytics Hub.png"
       ],
+      "source": "Medium, \"Analytics Hub - GCP's Data Exchange Solution\" by Sudharma Mokashi, Dec 2022",
       "bullets": [
-        "Analytics Hub is BigQuery's data-sharing platform, designed to make sharing large analytics-ready datasets, within an org or externally, cheaper and easier than older ad hoc sharing setups, while keeping proper auditing and governance in place.",
-        "It also gives access to Google-curated datasets you couldn't get any other way, like Search Trends or the Data Commons knowledge graph, alongside whatever your own organization publishes.",
-        "Three sharing scopes, with Private as the default: Public (visible to any Google Cloud user), Private (shared directly with specific people or a group), and Within Organization (shared org-wide).",
-        "Key building blocks: a Data Exchange groups related listings together and connects publishers with subscribers; a Listing is the actual reference to a specific published dataset; a Data Publisher creates and manages listings; a Data Subscriber searches for and links a listing into their own BigQuery project.",
-        "Role structure within an exchange: Administrators (Analytics Hub Admin role) manage the exchange itself, Publishers add and manage listings, Subscribers browse and subscribe to listings, and Viewers can see listings without subscribing.",
-        "Practically, a subscriber ends up with a live-linked view into the publisher's dataset rather than a copied snapshot, so the shared data always reflects the source."
-      ],
-      "source": "Medium, \"Analytics Hub - GCP's Data Exchange Solution\" by Sudharma Mokashi, Dec 2022"
+        {
+          "term": "What it is",
+          "text": "BigQuery's data-sharing platform, built to make sharing large analytics-ready datasets, within an org or externally, cheaper and easier than older ad hoc sharing setups, while keeping proper auditing and governance in place."
+        },
+        {
+          "term": "A bonus",
+          "text": "It also gives access to Google-curated datasets you couldn't get any other way, like Search Trends or the Data Commons knowledge graph, alongside whatever your own organization publishes."
+        },
+        {
+          "term": "Three sharing scopes",
+          "text": "",
+          "sub": [
+            "Public \u2014 visible to any Google Cloud user",
+            "Private (default) \u2014 shared directly with specific people or a group",
+            "Within Organization \u2014 shared org-wide"
+          ]
+        },
+        {
+          "term": "Building blocks",
+          "text": "",
+          "sub": [
+            "Data Exchange \u2014 groups related listings together and connects publishers with subscribers",
+            "Listing \u2014 the actual reference to a specific published dataset",
+            "Data Publisher \u2014 creates and manages listings",
+            "Data Subscriber \u2014 searches for and links a listing into their own BigQuery project"
+          ]
+        },
+        {
+          "term": "Roles within an exchange",
+          "text": "",
+          "sub": [
+            "Administrator (Analytics Hub Admin role) \u2014 manages the exchange itself",
+            "Publisher \u2014 adds and manages listings",
+            "Subscriber \u2014 browses and subscribes to listings",
+            "Viewer \u2014 can see listings without subscribing"
+          ]
+        },
+        {
+          "term": "What a subscriber actually gets",
+          "text": "A live-linked view into the publisher's dataset rather than a copied snapshot, so the shared data always reflects the source."
+        }
+      ]
     },
     {
       "id": "cloud-billing",
@@ -447,16 +1237,56 @@
       "images": [
         "Cloud Billing overview.png"
       ],
+      "source": "Google Cloud official documentation, \"Cloud Billing overview\"",
       "bullets": [
-        "Cloud Billing accounts define who pays for a set of Google Cloud (and Maps Platform/Firebase/AI Studio) resources; every active project must be linked to one, or product usage stops working even if the usage would otherwise be free.",
-        "A Cloud Billing account connects to a Google payments profile (the legal entity responsible for the bill) and a Google payments account (which actually holds the payment method and charging cycle).",
-        "Two account types: self-serve/online (credit card or ACH, monthly or threshold-based automatic charging) and invoiced/offline (check or wire transfer, typically one invoice per month, requires eligibility).",
-        "Charging cycles: Postpay (charged monthly, or when a spend threshold is hit) is standard for self-serve accounts; Prepay (deducted from a pre-loaded balance) is used for specific products like the Gemini API.",
-        "Cost monitoring tools: billing reports and cost trend views, budgets with spending alerts, anomaly detection for unusual spend spikes, and AI-assisted forecasting and recommendations through the FinOps hub.",
-        "Cost control tools: spend cap budgets that automatically pause usage of specified services once a cap is hit, committed use discounts (CUDs) for predictable workloads in exchange for a usage commitment, and programmatic notifications to automate a response (like adjusting quotas) when a budget alert fires.",
-        "Resource hierarchy ties into billing too: labels (key-value pairs) attached to resources flow into billing exports, letting you break down cost by team, environment, or project at a granular level in BigQuery-exported billing data."
-      ],
-      "source": "Google Cloud official documentation, \"Cloud Billing overview\""
+        {
+          "term": "The core requirement",
+          "text": "Every active project must be linked to a Cloud Billing account, or product usage stops working even if the usage would otherwise be free."
+        },
+        {
+          "term": "How a billing account is structured",
+          "text": "It connects to a Google payments profile (the legal entity responsible for the bill) and a Google payments account (which actually holds the payment method and charging cycle)."
+        },
+        {
+          "term": "Two account types",
+          "text": "",
+          "sub": [
+            "Self-serve / online \u2014 credit card or ACH, monthly or threshold-based automatic charging",
+            "Invoiced / offline \u2014 check or wire transfer, typically one invoice per month, requires eligibility"
+          ]
+        },
+        {
+          "term": "Charging cycles",
+          "text": "",
+          "sub": [
+            "Postpay \u2014 charged monthly, or when a spend threshold is hit; standard for self-serve accounts",
+            "Prepay \u2014 deducted from a pre-loaded balance; used for specific products like the Gemini API"
+          ]
+        },
+        {
+          "term": "Cost monitoring tools",
+          "text": "",
+          "sub": [
+            "Billing reports and cost trend views",
+            "Budgets with spending alerts",
+            "Anomaly detection for unusual spend spikes",
+            "AI-assisted forecasting and recommendations through the FinOps hub"
+          ]
+        },
+        {
+          "term": "Cost control tools",
+          "text": "",
+          "sub": [
+            "Spend cap budgets \u2014 automatically pause usage of specified services once a cap is hit",
+            "Committed use discounts (CUDs) \u2014 for predictable workloads in exchange for a usage commitment",
+            "Programmatic notifications \u2014 automate a response (like adjusting quotas) when a budget alert fires"
+          ]
+        },
+        {
+          "term": "Resource hierarchy ties in too",
+          "text": "Labels (key-value pairs) attached to resources flow into billing exports, letting you break down cost by team, environment, or project at a granular level in BigQuery-exported billing data."
+        }
+      ]
     },
     {
       "id": "mlops",
@@ -465,16 +1295,42 @@
       "images": [
         "MLOps on Google Cloud.png"
       ],
+      "source": "\"MLOps on Google Cloud: Smooth Machine Learning Deployments\" (vendor blog, SlickFinch), Jul 2024",
       "bullets": [
-        "MLOps combines ML, DevOps, and data engineering practices to automate the full model lifecycle, data prep, training, deployment, and ongoing monitoring, rather than treating each stage as a manual, one-off task.",
-        "Vertex AI is Google's unified platform for the ML lifecycle: training and deploying models (pre-built or custom), automated hyperparameter tuning, and real-time performance monitoring, all in one place.",
-        "TensorFlow Extended (TFX) is an end-to-end pipeline framework with dedicated components for data validation (catching bad/inconsistent input data), transform (preprocessing), training, and serving.",
-        "Cloud Build extends its general CI/CD role into MLOps specifically, letting you define a YAML pipeline that chains data preprocessing, training, testing, and deployment into one repeatable, version-controlled workflow.",
-        "Continuous Training (CT): automatically retrains models as new data arrives, commonly scheduled or event-triggered through Vertex AI Pipelines, so a model doesn't quietly go stale as the world changes.",
-        "Continuous Monitoring (CM): tracks a deployed model's real-world performance to catch data drift, degradation, or anomalies, using tools like Vertex AI Monitoring (accuracy/latency metrics with alerting), Cloud Logging, and Cloud Monitoring dashboards.",
-        "Supporting tools mentioned alongside core MLOps: Kubeflow Pipelines for portable Kubernetes-based ML workflows, Cloud Functions for lightweight event-triggered automation steps, and Artifact Registry for storing trained models and their dependencies."
-      ],
-      "source": "\"MLOps on Google Cloud: Smooth Machine Learning Deployments\" (vendor blog, SlickFinch), Jul 2024"
+        {
+          "term": "What MLOps is",
+          "text": "Combines ML, DevOps, and data engineering practices to automate the full model lifecycle, data prep, training, deployment, and ongoing monitoring, rather than treating each stage as a manual, one-off task."
+        },
+        {
+          "term": "Vertex AI",
+          "text": "Google's unified platform for the ML lifecycle: training and deploying models (pre-built or custom), automated hyperparameter tuning, and real-time performance monitoring, all in one place."
+        },
+        {
+          "term": "TensorFlow Extended (TFX)",
+          "text": "An end-to-end pipeline framework with dedicated components for data validation (catching bad/inconsistent input data), transform (preprocessing), training, and serving."
+        },
+        {
+          "term": "Cloud Build for MLOps",
+          "text": "Extends its general CI/CD role specifically into MLOps, letting you define a YAML pipeline that chains data preprocessing, training, testing, and deployment into one repeatable, version-controlled workflow."
+        },
+        {
+          "term": "Continuous Training (CT)",
+          "text": "Automatically retrains models as new data arrives, commonly scheduled or event-triggered through Vertex AI Pipelines, so a model doesn't quietly go stale as the world changes."
+        },
+        {
+          "term": "Continuous Monitoring (CM)",
+          "text": "Tracks a deployed model's real-world performance to catch data drift, degradation, or anomalies, using Vertex AI Monitoring (accuracy/latency metrics with alerting), Cloud Logging, and Cloud Monitoring dashboards."
+        },
+        {
+          "term": "Supporting tools mentioned alongside core MLOps",
+          "text": "",
+          "sub": [
+            "Kubeflow Pipelines \u2014 portable Kubernetes-based ML workflows",
+            "Cloud Functions \u2014 lightweight event-triggered automation steps",
+            "Artifact Registry \u2014 stores trained models and their dependencies"
+          ]
+        }
+      ]
     },
     {
       "id": "window-functions",
@@ -483,31 +1339,129 @@
       "images": [
         "Mastering Window Functions.png"
       ],
+      "source": "Medium, \"What is a Slowly Changing Dimension (SCD)? Mastering Window Functions in Streaming Data\" by Bhavana Jaiswal, May 2025",
       "bullets": [
-        "Windowing groups streaming events over time so you can aggregate, filter, or detect patterns, choosing the right window type affects both accuracy and cost.",
-        "Tumbling window: fixed-size, non-overlapping, back-to-back blocks of time; each event belongs to exactly one window. Good for simple periodic metrics like sales totals every hour, since the logic and storage stay simple.",
-        "Hopping window: fixed-size but overlapping, defined by both a window size and a hop interval; a single event can land in multiple windows. Useful for smoother trend detection, like a rolling average that updates every few minutes over a longer lookback.",
-        "Sliding (rolling) window: anchored to each individual event rather than to clock time, a new window opens for every event covering a lookback period before it. More computationally expensive but needed for precise per-event analysis like fraud or anomaly detection where exact timing matters.",
-        "Session window: groups events based on gaps of inactivity rather than fixed time, a session ends once no new event arrives within a defined gap. Fits user-behavior analysis like clickstreams or chat sessions.",
-        "Snapshot window: emits data at specific fixed timestamps (like a clock tick) rather than based on event grouping, suited to periodic dashboard snapshots or exact scheduled pulls (e.g., daily revenue at midnight).",
-        "Related concept, Slowly Changing Dimensions (SCD): dimension table attributes (like a customer's address) that change infrequently and unpredictably; SCD handling preserves historical accuracy as those values change over time, which is a separate but related concern from choosing a streaming window."
+        {
+          "term": "Why windowing matters",
+          "text": "Groups streaming events over time so you can aggregate, filter, or detect patterns, choosing the right window type affects both accuracy and cost."
+        },
+        {
+          "term": "Related concept: Slowly Changing Dimensions (SCD)",
+          "text": "Dimension table attributes (like a customer's address) that change infrequently and unpredictably. SCD handling preserves historical accuracy as those values change over time, a separate but related concern from choosing a streaming window."
+        }
       ],
-      "source": "Medium, \"What is a Slowly Changing Dimension (SCD)? Mastering Window Functions in Streaming Data\" by Bhavana Jaiswal, May 2025"
+      "table": {
+        "caption": "Five window types",
+        "headers": [
+          "Window type",
+          "How it groups events",
+          "Best fit"
+        ],
+        "rows": [
+          [
+            "Tumbling",
+            "Fixed-size, non-overlapping, back-to-back blocks; each event in exactly one window",
+            "Simple periodic metrics, e.g. sales totals every hour"
+          ],
+          [
+            "Hopping",
+            "Fixed-size but overlapping (a size + a hop interval); one event can land in multiple windows",
+            "Smoother trend detection, e.g. a rolling average updating every few minutes"
+          ],
+          [
+            "Sliding (rolling)",
+            "Anchored to each individual event, not clock time; a new window opens per event covering a lookback period",
+            "Precise per-event analysis like fraud or anomaly detection where exact timing matters"
+          ],
+          [
+            "Session",
+            "Groups by gaps of inactivity; a session ends once no new event arrives within a defined gap",
+            "User-behavior analysis like clickstreams or chat sessions"
+          ],
+          [
+            "Snapshot",
+            "Emits data at specific fixed timestamps rather than event grouping",
+            "Periodic dashboard snapshots or exact scheduled pulls, e.g. daily revenue at midnight"
+          ]
+        ]
+      }
     },
     {
       "id": "load-balancers",
       "topic": "GCP Load Balancer Types",
       "domain": "Designing Data Processing Systems",
       "images": [],
+      "source": "in28minutes, \"GCP Load Balancers - GCP Certification Cheat Sheet\"",
       "bullets": [
-        "Cloud Load Balancing distributes user traffic across application instances in one or multiple regions. It's a fully distributed, software-defined managed service with health checking, autoscaling, and a single anycast IP for global reach, and it also supports internal (VPC-only) load balancing.",
-        "Networking layers, briefly: the network layer moves raw bytes (IP), the transport layer governs reliability (TCP for reliability, TLS for secure TCP, UDP for speed over reliability), and the application layer is where most apps actually talk (HTTP/HTTPS for web and REST, SMTP for email). Latency-sensitive apps like gaming or live video skip ahead and talk UDP directly for performance.",
-        "Key terms: a backend is the group of endpoints (e.g., an instance group) receiving traffic; a frontend defines the IP, port, and protocol clients connect to (an SSL certificate is required if terminating TLS there); host and path rules (HTTP(S) load balancing only) route requests to different backends based on URL path, hostname, headers, or HTTP method.",
-        "SSL/TLS termination (offloading): the external hop (client to load balancer) is typically HTTPS, while the internal hop (load balancer to VM, over Google's network) can safely drop to HTTP/TCP since that traffic never leaves Google's backbone.",
-        "Load balancer types by traffic shape: External HTTP(S) (global, proxy-based, ports 80/8080/443) and Internal HTTP(S) (regional, proxy-based) for web traffic; SSL Proxy and TCP Proxy (global, proxy-based) for non-HTTP TCP traffic, with or without SSL offload; External and Internal Network TCP/UDP (regional, pass-through) for lower-level traffic that doesn't need a proxy.",
-        "Common scenarios: use health checks so only healthy instances receive traffic; use multiple regional managed instance groups behind one load balancer for high availability; use host/path rules to route several microservices through a single load balancer; choose External HTTP(S) for global HTTPS traffic across regions; choose SSL Proxy when you need SSL termination for non-HTTPS traffic."
+        {
+          "term": "What Cloud Load Balancing is",
+          "text": "Distributes user traffic across application instances in one or multiple regions. Fully distributed, software-defined, with health checking, autoscaling, and a single anycast IP for global reach. Also supports internal (VPC-only) load balancing."
+        },
+        {
+          "term": "Networking layers, briefly",
+          "text": "The network layer moves raw bytes (IP), the transport layer governs reliability (TCP for reliability, TLS for secure TCP, UDP for speed over reliability), and the application layer is where most apps actually talk (HTTP/HTTPS for web/REST, SMTP for email). Latency-sensitive apps like gaming or live video skip ahead and talk UDP directly for performance."
+        },
+        {
+          "term": "Key terms",
+          "text": "",
+          "sub": [
+            "Backend \u2014 the group of endpoints (e.g. an instance group) receiving traffic",
+            "Frontend \u2014 defines the IP, port, and protocol clients connect to (an SSL certificate is required if terminating TLS there)",
+            "Host and path rules \u2014 HTTP(S) load balancing only, routes requests to different backends based on URL path, hostname, headers, or HTTP method"
+          ]
+        },
+        {
+          "term": "SSL/TLS termination (offloading)",
+          "text": "The external hop (client to load balancer) is typically HTTPS, while the internal hop (load balancer to VM, over Google's network) can safely drop to HTTP/TCP since that traffic never leaves Google's backbone."
+        }
       ],
-      "source": "in28minutes, \"GCP Load Balancers - GCP Certification Cheat Sheet\""
+      "table": {
+        "caption": "Load balancer types by traffic shape",
+        "headers": [
+          "Type",
+          "Scope",
+          "Ports/protocol",
+          "Use for"
+        ],
+        "rows": [
+          [
+            "External HTTP(S)",
+            "Global, proxy-based",
+            "80 / 8080 / 443",
+            "Global HTTPS web traffic across regions"
+          ],
+          [
+            "Internal HTTP(S)",
+            "Regional, proxy-based",
+            "80 / 8080 / 443",
+            "Web traffic between internal microservices"
+          ],
+          [
+            "SSL Proxy",
+            "Global, proxy-based",
+            "Non-HTTP TCP, with SSL offload",
+            "Non-HTTPS TCP traffic needing SSL termination"
+          ],
+          [
+            "TCP Proxy",
+            "Global, proxy-based",
+            "Non-HTTP TCP",
+            "Non-HTTP TCP traffic, no SSL offload needed"
+          ],
+          [
+            "External Network TCP/UDP",
+            "Regional, pass-through",
+            "Any TCP/UDP",
+            "Lower-level traffic that doesn't need a proxy"
+          ],
+          [
+            "Internal Network TCP/UDP",
+            "Regional, pass-through",
+            "Any TCP/UDP",
+            "Internal lower-level traffic, no proxy needed"
+          ]
+        ]
+      }
     }
   ],
   "orphanImages": [
