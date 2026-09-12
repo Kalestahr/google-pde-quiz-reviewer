@@ -11,6 +11,13 @@ const DOMAIN_SHORT = {
   "Ensuring Solution Quality (Security, Monitoring, Optimization)": "Solution Quality",
   "Data Governance, Compliance, and Scalability": "Governance",
 };
+const DOMAIN_COLORS = {
+  "Designing Data Processing Systems": { accent: "#1a73e8", tint: "#e8f0fe", dark: "#174ea6", icon: "📐" },
+  "Building and Operationalizing Data Pipelines": { accent: "#188038", tint: "#e6f4ea", dark: "#0d652d", icon: "🔧" },
+  "Operationalizing Machine Learning Models": { accent: "#9334e6", tint: "#f3e8fd", dark: "#681da8", icon: "🤖" },
+  "Ensuring Solution Quality (Security, Monitoring, Optimization)": { accent: "#d93025", tint: "#fce8e6", dark: "#a50e0e", icon: "🛡️" },
+  "Data Governance, Compliance, and Scalability": { accent: "#ea8600", tint: "#fef3e0", dark: "#b06000", icon: "📋" },
+};
 
 let BANK = null;
 const el = (id) => document.getElementById(id);
@@ -656,9 +663,10 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
 
     const domainDiv = document.createElement('div');
     domainDiv.className = 'notes-sidebar-domain';
+    const colors = DOMAIN_COLORS[domain] || {};
     const title = document.createElement('div');
     title.className = 'notes-sidebar-domain-title';
-    title.textContent = notesShortDomain(domain);
+    title.innerHTML = `<span class="dot" style="background:${colors.accent || '#999'}"></span>${escapeHtml(notesShortDomain(domain))}`;
     domainDiv.appendChild(title);
 
     domainNotes.forEach((n) => {
@@ -709,11 +717,15 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
     const card = document.createElement('div');
     card.className = 'notes-topic-card';
     card.id = `${context}-card-${n.id}`;
+    const colors = DOMAIN_COLORS[n.domain] || {};
+    card.style.setProperty('--notes-accent', colors.accent || '#1a73e8');
+    card.style.setProperty('--notes-accent-tint', colors.tint || '#e8f0fe');
+    card.style.setProperty('--notes-accent-dark', colors.dark || '#174ea6');
     if (savedState.expandedId === n.id || term) card.classList.add('expanded');
 
     const header = document.createElement('div');
     header.className = 'notes-topic-header';
-    header.innerHTML = `<div><h3>${escapeHtml(n.topic)}</h3><span class="notes-topic-domain-tag">${escapeHtml(notesShortDomain(n.domain))}</span></div><span class="notes-topic-toggle">Toggle</span>`;
+    header.innerHTML = `<div class="notes-topic-header-left"><span class="notes-topic-icon">${colors.icon || '📄'}</span><div><h3>${escapeHtml(n.topic)}</h3><span class="notes-topic-domain-tag">${escapeHtml(notesShortDomain(n.domain))}</span></div></div><span class="notes-topic-toggle">Toggle</span>`;
     header.addEventListener('click', () => {
       card.classList.toggle('expanded');
       saveNotesSessionState(context, card.classList.contains('expanded') ? n.id : null);
@@ -753,7 +765,7 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
         img.src = `images/${encodeURIComponent(imgFile)}`;
         img.alt = n.topic;
         img.loading = 'lazy';
-        img.addEventListener('click', () => window.open(img.src, '_blank'));
+        img.addEventListener('click', () => openLightbox(img.src, n.topic));
         imgWrap.appendChild(img);
       });
       body.appendChild(imgWrap);
@@ -773,12 +785,13 @@ function renderNotesInto(sidebarEl, mainEl, searchTerm, context) {
       img.src = `images/${encodeURIComponent(o.file)}`;
       img.alt = o.label;
       img.loading = 'lazy';
-      img.style.maxWidth = '320px';
-      img.style.maxHeight = '220px';
+      img.style.maxWidth = '380px';
+      img.style.maxHeight = '260px';
       img.style.border = '1px solid var(--border)';
-      img.style.borderRadius = '6px';
+      img.style.borderRadius = '8px';
+      img.style.padding = '6px';
       img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => window.open(img.src, '_blank'));
+      img.addEventListener('click', () => openLightbox(img.src, o.label));
       card.appendChild(img);
       mainEl.appendChild(card);
     });
@@ -836,6 +849,16 @@ function closeNotesDrawer() {
   el('notesDrawer').hidden = true;
 }
 
+function openLightbox(src, caption) {
+  el('lightboxImg').src = src;
+  el('lightboxCaption').textContent = caption || '';
+  el('lightbox').hidden = false;
+}
+function closeLightbox() {
+  el('lightbox').hidden = true;
+  el('lightboxImg').src = '';
+}
+
 function bindNotesEvents() {
   el('goNotes').addEventListener('click', openNotesView);
   el('notesBack').addEventListener('click', () => showView('viewHome'));
@@ -858,6 +881,12 @@ function bindNotesEvents() {
   syncScratchpads('scratchpadTextDrawer', 'scratchpadText');
 
   loadStudyFlags();
+
+  el('lightboxClose').addEventListener('click', closeLightbox);
+  el('lightboxBackdrop').addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !el('lightbox').hidden) closeLightbox();
+  });
 }
 
 init();
